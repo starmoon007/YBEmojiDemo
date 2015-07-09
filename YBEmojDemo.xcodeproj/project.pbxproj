@@ -7,14 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D035F3B21B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3B11B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m */; };
+		D035F3B41B40D9AB00F40F62 /* YBKeyboardMoreFunction.plist in Resources */ = {isa = PBXBuildFile; fileRef = D035F3B31B40D9AB00F40F62 /* YBKeyboardMoreFunction.plist */; };
+		D035F3B71B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3B61B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.m */; };
+		D035F3D41B411A8E00F40F62 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3C41B411A8E00F40F62 /* MJConst.m */; };
+		D035F3D51B411A8E00F40F62 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3C71B411A8E00F40F62 /* MJFoundation.m */; };
+		D035F3D61B411A8E00F40F62 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3C91B411A8E00F40F62 /* MJProperty.m */; };
+		D035F3D71B411A8E00F40F62 /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3CB1B411A8E00F40F62 /* MJType.m */; };
+		D035F3D81B411A8E00F40F62 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3CD1B411A8E00F40F62 /* NSObject+MJCoding.m */; };
+		D035F3D91B411A8E00F40F62 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3CF1B411A8E00F40F62 /* NSObject+MJKeyValue.m */; };
+		D035F3DA1B411A8E00F40F62 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3D11B411A8E00F40F62 /* NSObject+MJProperty.m */; };
+		D035F3DB1B411A8E00F40F62 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D035F3D31B411A8E00F40F62 /* NSString+MJExtension.m */; };
 		D03B03041B394EDB0044496F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03031B394EDB0044496F /* main.m */; };
 		D03B03071B394EDB0044496F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03061B394EDB0044496F /* AppDelegate.m */; };
 		D03B030A1B394EDB0044496F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03091B394EDB0044496F /* ViewController.m */; };
 		D03B030D1B394EDB0044496F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03B030B1B394EDB0044496F /* Main.storyboard */; };
 		D03B030F1B394EDB0044496F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03B030E1B394EDB0044496F /* Assets.xcassets */; };
-		D03B03121B394EDB0044496F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03B03101B394EDB0044496F /* LaunchScreen.storyboard */; };
 		D03B031D1B394EDB0044496F /* YBEmojDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B031C1B394EDB0044496F /* YBEmojDemoTests.m */; };
 		D03B03281B394EDB0044496F /* YBEmojDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03271B394EDB0044496F /* YBEmojDemoUITests.m */; };
+		D03B03371B394FF70044496F /* YBKeyBoardInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */; };
+		D03B033B1B3962300044496F /* YBKeyBoardInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */; };
+		D03B033E1B396B460044496F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B033D1B396B460044496F /* UIView+Extension.m */; };
+		D06C33BE1B4D0AC100746107 /* YBKeyboardEmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */; };
+		D06C33C11B4D2A3500746107 /* YBKeyboardEmojiPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */; };
+		D07159151B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D07159141B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m */; };
+		D07159171B4AA74600A3D9F3 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = D07159161B4AA74600A3D9F3 /* EmotionIcons */; };
+		D07159191B4B665300A3D9F3 /* YBKeyboardEmoj.plist in Resources */ = {isa = PBXBuildFile; fileRef = D07159181B4B665300A3D9F3 /* YBKeyboardEmoj.plist */; };
+		D071591C1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m in Sources */ = {isa = PBXBuildFile; fileRef = D071591B1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m */; };
+		D084AC801B417D2700861633 /* YBKeyboardVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084AC7F1B417D2700861633 /* YBKeyboardVoiceView.m */; };
+		D084AC831B418AC300861633 /* YBKeyboardTalkbackView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084AC821B418AC300861633 /* YBKeyboardTalkbackView.m */; };
+		D084AC861B418AE900861633 /* YBKeyboardRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D084AC851B418AE900861633 /* YBKeyboardRecordView.m */; };
+		D084AC891B4194D100861633 /* YBKeyboardVoiceBillboard.m in Sources */ = {isa = PBXBuildFile; fileRef = D084AC881B4194D100861633 /* YBKeyboardVoiceBillboard.m */; };
+		D084AC8B1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D084AC8A1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib */; };
+		D09A88381B4BCE4A0048BF07 /* YBKeyboardEmojModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D09A88371B4BCE4A0048BF07 /* YBKeyboardEmojModel.m */; };
+		D0ABD0781B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ABD0771B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m */; };
+		D0ABD0FB1B413B1900BD9C25 /* icon_messages_more_call@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D11B413B1900BD9C25 /* icon_messages_more_call@2x.png */; };
+		D0ABD0FC1B413B1900BD9C25 /* icon_messages_more_call@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D21B413B1900BD9C25 /* icon_messages_more_call@3x.png */; };
+		D0ABD0FD1B413B1900BD9C25 /* icon_messages_more_call_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D31B413B1900BD9C25 /* icon_messages_more_call_p.png */; };
+		D0ABD0FE1B413B1900BD9C25 /* icon_messages_more_call_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D41B413B1900BD9C25 /* icon_messages_more_call_p@2x.png */; };
+		D0ABD0FF1B413B1900BD9C25 /* icon_messages_more_call_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D51B413B1900BD9C25 /* icon_messages_more_call_p@3x.png */; };
+		D0ABD1001B413B1900BD9C25 /* icon_messages_more_callpng.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D61B413B1900BD9C25 /* icon_messages_more_callpng.png */; };
+		D0ABD1011B413B1900BD9C25 /* icon_messages_more_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D71B413B1900BD9C25 /* icon_messages_more_camera.png */; };
+		D0ABD1021B413B1900BD9C25 /* icon_messages_more_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D81B413B1900BD9C25 /* icon_messages_more_camera@2x.png */; };
+		D0ABD1031B413B1900BD9C25 /* icon_messages_more_camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0D91B413B1900BD9C25 /* icon_messages_more_camera@3x.png */; };
+		D0ABD1041B413B1900BD9C25 /* icon_messages_more_camera_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DA1B413B1900BD9C25 /* icon_messages_more_camera_p.png */; };
+		D0ABD1051B413B1900BD9C25 /* icon_messages_more_camera_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DB1B413B1900BD9C25 /* icon_messages_more_camera_p@2x.png */; };
+		D0ABD1061B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DC1B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png */; };
+		D0ABD1071B413B1900BD9C25 /* icon_messages_more_location.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DD1B413B1900BD9C25 /* icon_messages_more_location.png */; };
+		D0ABD1081B413B1900BD9C25 /* icon_messages_more_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DE1B413B1900BD9C25 /* icon_messages_more_location@2x.png */; };
+		D0ABD1091B413B1900BD9C25 /* icon_messages_more_location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0DF1B413B1900BD9C25 /* icon_messages_more_location@3x.png */; };
+		D0ABD10A1B413B1900BD9C25 /* icon_messages_more_location_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E01B413B1900BD9C25 /* icon_messages_more_location_p.png */; };
+		D0ABD10B1B413B1900BD9C25 /* icon_messages_more_location_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E11B413B1900BD9C25 /* icon_messages_more_location_p@2x.png */; };
+		D0ABD10C1B413B1900BD9C25 /* icon_messages_more_location_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E21B413B1900BD9C25 /* icon_messages_more_location_p@3x.png */; };
+		D0ABD10D1B413B1900BD9C25 /* icon_messages_more_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E31B413B1900BD9C25 /* icon_messages_more_pic.png */; };
+		D0ABD10E1B413B1900BD9C25 /* icon_messages_more_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E41B413B1900BD9C25 /* icon_messages_more_pic@2x.png */; };
+		D0ABD10F1B413B1900BD9C25 /* icon_messages_more_pic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E51B413B1900BD9C25 /* icon_messages_more_pic@3x.png */; };
+		D0ABD1101B413B1900BD9C25 /* icon_messages_more_pic_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E61B413B1900BD9C25 /* icon_messages_more_pic_p.png */; };
+		D0ABD1111B413B1900BD9C25 /* icon_messages_more_pic_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E71B413B1900BD9C25 /* icon_messages_more_pic_p@2x.png */; };
+		D0ABD1121B413B1900BD9C25 /* icon_messages_more_pic_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E81B413B1900BD9C25 /* icon_messages_more_pic_p@3x.png */; };
+		D0ABD1131B413B1900BD9C25 /* icon_messages_more_pic_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0E91B413B1900BD9C25 /* icon_messages_more_pic_voice.png */; };
+		D0ABD1141B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0EA1B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png */; };
+		D0ABD1151B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0EB1B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png */; };
+		D0ABD1161B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0EC1B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png */; };
+		D0ABD1171B413B1900BD9C25 /* icon_messages_more_pic_voice_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0ED1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@2x.png */; };
+		D0ABD1181B413B1900BD9C25 /* icon_messages_more_pic_voice_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0EE1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@3x.png */; };
+		D0ABD1191B413B1900BD9C25 /* icon_messages_more_pic_write.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0EF1B413B1900BD9C25 /* icon_messages_more_pic_write.png */; };
+		D0ABD11A1B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F01B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png */; };
+		D0ABD11B1B413B1900BD9C25 /* icon_messages_more_pic_write@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F11B413B1900BD9C25 /* icon_messages_more_pic_write@3x.png */; };
+		D0ABD11C1B413B1900BD9C25 /* icon_messages_more_pic_write_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F21B413B1900BD9C25 /* icon_messages_more_pic_write_p.png */; };
+		D0ABD11D1B413B1900BD9C25 /* icon_messages_more_pic_write_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F31B413B1900BD9C25 /* icon_messages_more_pic_write_p@2x.png */; };
+		D0ABD11E1B413B1900BD9C25 /* icon_messages_more_pic_write_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F41B413B1900BD9C25 /* icon_messages_more_pic_write_p@3x.png */; };
+		D0ABD11F1B413B1900BD9C25 /* icon_messages_more_video.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F51B413B1900BD9C25 /* icon_messages_more_video.png */; };
+		D0ABD1201B413B1900BD9C25 /* icon_messages_more_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F61B413B1900BD9C25 /* icon_messages_more_video@2x.png */; };
+		D0ABD1211B413B1900BD9C25 /* icon_messages_more_video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F71B413B1900BD9C25 /* icon_messages_more_video@3x.png */; };
+		D0ABD1221B413B1900BD9C25 /* icon_messages_more_video_p.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F81B413B1900BD9C25 /* icon_messages_more_video_p.png */; };
+		D0ABD1231B413B1900BD9C25 /* icon_messages_more_video_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0F91B413B1900BD9C25 /* icon_messages_more_video_p@2x.png */; };
+		D0ABD1241B413B1900BD9C25 /* icon_messages_more_video_p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ABD0FA1B413B1900BD9C25 /* icon_messages_more_video_p@3x.png */; };
+		D0B6E2021B4B9C160062E8E4 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E2001B4B9C160062E8E4 /* NSString+Emoji.m */; };
+		D0B6E2051B4BB1C70062E8E4 /* YBKeyboardEmojListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E2041B4BB1C70062E8E4 /* YBKeyboardEmojListView.m */; };
+		D0B6E2081B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E2071B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m */; };
+		D0B6E20B1B4BBE860062E8E4 /* YBKeyboardEmojSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */; };
+		D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */; };
+		D0FBF12C1B3CE59900DE52AB /* messages_icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */; };
+		D0FBF12D1B3CE59900DE52AB /* messages_icon_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */; };
+		D0FBF12E1B3CE59900DE52AB /* messages_icon_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1281B3CE59900DE52AB /* messages_icon_more@3x.png */; };
+		D0FBF12F1B3CE59900DE52AB /* sms_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1291B3CE59900DE52AB /* sms_keyboard.png */; };
+		D0FBF1301B3CE59900DE52AB /* sms_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF12A1B3CE59900DE52AB /* sms_keyboard@2x.png */; };
+		D0FBF1311B3CE59900DE52AB /* sms_keyboard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF12B1B3CE59900DE52AB /* sms_keyboard@3x.png */; };
+		D0FBF1351B3CE83800DE52AB /* messages_icon_empty_status.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1321B3CE83800DE52AB /* messages_icon_empty_status.png */; };
+		D0FBF1361B3CE83800DE52AB /* messages_icon_empty_status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1331B3CE83800DE52AB /* messages_icon_empty_status@2x.png */; };
+		D0FBF1371B3CE83800DE52AB /* messages_icon_empty_status@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1341B3CE83800DE52AB /* messages_icon_empty_status@3x.png */; };
+		D0FC9D8E1B4682AB00657435 /* YBKeyboardEmojView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC9D8D1B4682AB00657435 /* YBKeyboardEmojView.m */; };
+		D0FC9D911B4689F200657435 /* YBKeyboardEmojOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC9D901B4689F200657435 /* YBKeyboardEmojOptionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +119,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D035F3B01B40D95C00F40F62 /* YBKeyboardMoreFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardMoreFunctionView.h; sourceTree = "<group>"; };
+		D035F3B11B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardMoreFunctionView.m; sourceTree = "<group>"; };
+		D035F3B31B40D9AB00F40F62 /* YBKeyboardMoreFunction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YBKeyboardMoreFunction.plist; sourceTree = "<group>"; };
+		D035F3B51B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBkeyboardMoreFunctionModel.h; sourceTree = "<group>"; };
+		D035F3B61B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBkeyboardMoreFunctionModel.m; sourceTree = "<group>"; };
+		D035F3C31B411A8E00F40F62 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		D035F3C41B411A8E00F40F62 /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		D035F3C51B411A8E00F40F62 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		D035F3C61B411A8E00F40F62 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		D035F3C71B411A8E00F40F62 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		D035F3C81B411A8E00F40F62 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		D035F3C91B411A8E00F40F62 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		D035F3CA1B411A8E00F40F62 /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		D035F3CB1B411A8E00F40F62 /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		D035F3CC1B411A8E00F40F62 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		D035F3CD1B411A8E00F40F62 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		D035F3CE1B411A8E00F40F62 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		D035F3CF1B411A8E00F40F62 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		D035F3D01B411A8E00F40F62 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		D035F3D11B411A8E00F40F62 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		D035F3D21B411A8E00F40F62 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		D035F3D31B411A8E00F40F62 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		D03B02FF1B394EDB0044496F /* YBEmojDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBEmojDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03B03031B394EDB0044496F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D03B03051B394EDB0044496F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,7 +149,6 @@
 		D03B03091B394EDB0044496F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D03B030C1B394EDB0044496F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D03B030E1B394EDB0044496F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D03B03111B394EDB0044496F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D03B03131B394EDB0044496F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03B03181B394EDB0044496F /* YBEmojDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBEmojDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03B031C1B394EDB0044496F /* YBEmojDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBEmojDemoTests.m; sourceTree = "<group>"; };
@@ -51,6 +156,100 @@
 		D03B03231B394EDB0044496F /* YBEmojDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBEmojDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03B03271B394EDB0044496F /* YBEmojDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBEmojDemoUITests.m; sourceTree = "<group>"; };
 		D03B03291B394EDB0044496F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D03B03351B394FF70044496F /* YBKeyBoardInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyBoardInputBar.h; sourceTree = "<group>"; };
+		D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyBoardInputBar.m; sourceTree = "<group>"; };
+		D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBKeyBoardInputBar.xib; sourceTree = "<group>"; };
+		D03B033C1B396B460044496F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		D03B033D1B396B460044496F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D06C33BC1B4D0AC100746107 /* YBKeyboardEmojiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiButton.h; sourceTree = "<group>"; };
+		D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiButton.m; sourceTree = "<group>"; };
+		D06C33BF1B4D2A3400746107 /* YBKeyboardEmojiPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiPageControl.h; sourceTree = "<group>"; };
+		D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiPageControl.m; sourceTree = "<group>"; };
+		D07159131B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojOptionCell.h; sourceTree = "<group>"; };
+		D07159141B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojOptionCell.m; sourceTree = "<group>"; };
+		D07159161B4AA74600A3D9F3 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		D07159181B4B665300A3D9F3 /* YBKeyboardEmoj.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YBKeyboardEmoj.plist; sourceTree = "<group>"; };
+		D071591A1B4B677B00A3D9F3 /* YBKeyboardEmojOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojOption.h; sourceTree = "<group>"; };
+		D071591B1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojOption.m; sourceTree = "<group>"; };
+		D084AC7E1B417D2700861633 /* YBKeyboardVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardVoiceView.h; sourceTree = "<group>"; };
+		D084AC7F1B417D2700861633 /* YBKeyboardVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardVoiceView.m; sourceTree = "<group>"; };
+		D084AC811B418AC300861633 /* YBKeyboardTalkbackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardTalkbackView.h; sourceTree = "<group>"; };
+		D084AC821B418AC300861633 /* YBKeyboardTalkbackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardTalkbackView.m; sourceTree = "<group>"; };
+		D084AC841B418AE900861633 /* YBKeyboardRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardRecordView.h; sourceTree = "<group>"; };
+		D084AC851B418AE900861633 /* YBKeyboardRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardRecordView.m; sourceTree = "<group>"; };
+		D084AC871B4194D100861633 /* YBKeyboardVoiceBillboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardVoiceBillboard.h; sourceTree = "<group>"; };
+		D084AC881B4194D100861633 /* YBKeyboardVoiceBillboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardVoiceBillboard.m; sourceTree = "<group>"; };
+		D084AC8A1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBKeyboardVoiceBillboard.xib; sourceTree = "<group>"; };
+		D09A88361B4BCE4A0048BF07 /* YBKeyboardEmojModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojModel.h; sourceTree = "<group>"; };
+		D09A88371B4BCE4A0048BF07 /* YBKeyboardEmojModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojModel.m; sourceTree = "<group>"; };
+		D0ABD0761B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBkeyboardMoreFunctionButton.h; sourceTree = "<group>"; };
+		D0ABD0771B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBkeyboardMoreFunctionButton.m; sourceTree = "<group>"; };
+		D0ABD0D11B413B1900BD9C25 /* icon_messages_more_call@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_call@2x.png"; sourceTree = "<group>"; };
+		D0ABD0D21B413B1900BD9C25 /* icon_messages_more_call@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_call@3x.png"; sourceTree = "<group>"; };
+		D0ABD0D31B413B1900BD9C25 /* icon_messages_more_call_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_call_p.png; sourceTree = "<group>"; };
+		D0ABD0D41B413B1900BD9C25 /* icon_messages_more_call_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_call_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0D51B413B1900BD9C25 /* icon_messages_more_call_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_call_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0D61B413B1900BD9C25 /* icon_messages_more_callpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_callpng.png; sourceTree = "<group>"; };
+		D0ABD0D71B413B1900BD9C25 /* icon_messages_more_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_camera.png; sourceTree = "<group>"; };
+		D0ABD0D81B413B1900BD9C25 /* icon_messages_more_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_camera@2x.png"; sourceTree = "<group>"; };
+		D0ABD0D91B413B1900BD9C25 /* icon_messages_more_camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_camera@3x.png"; sourceTree = "<group>"; };
+		D0ABD0DA1B413B1900BD9C25 /* icon_messages_more_camera_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_camera_p.png; sourceTree = "<group>"; };
+		D0ABD0DB1B413B1900BD9C25 /* icon_messages_more_camera_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_camera_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0DC1B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_camera_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0DD1B413B1900BD9C25 /* icon_messages_more_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_location.png; sourceTree = "<group>"; };
+		D0ABD0DE1B413B1900BD9C25 /* icon_messages_more_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_location@2x.png"; sourceTree = "<group>"; };
+		D0ABD0DF1B413B1900BD9C25 /* icon_messages_more_location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_location@3x.png"; sourceTree = "<group>"; };
+		D0ABD0E01B413B1900BD9C25 /* icon_messages_more_location_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_location_p.png; sourceTree = "<group>"; };
+		D0ABD0E11B413B1900BD9C25 /* icon_messages_more_location_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_location_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0E21B413B1900BD9C25 /* icon_messages_more_location_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_location_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0E31B413B1900BD9C25 /* icon_messages_more_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic.png; sourceTree = "<group>"; };
+		D0ABD0E41B413B1900BD9C25 /* icon_messages_more_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic@2x.png"; sourceTree = "<group>"; };
+		D0ABD0E51B413B1900BD9C25 /* icon_messages_more_pic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic@3x.png"; sourceTree = "<group>"; };
+		D0ABD0E61B413B1900BD9C25 /* icon_messages_more_pic_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic_p.png; sourceTree = "<group>"; };
+		D0ABD0E71B413B1900BD9C25 /* icon_messages_more_pic_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0E81B413B1900BD9C25 /* icon_messages_more_pic_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0E91B413B1900BD9C25 /* icon_messages_more_pic_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic_voice.png; sourceTree = "<group>"; };
+		D0ABD0EA1B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_voice@2x.png"; sourceTree = "<group>"; };
+		D0ABD0EB1B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_voice@3x.png"; sourceTree = "<group>"; };
+		D0ABD0EC1B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic_voice_p.png; sourceTree = "<group>"; };
+		D0ABD0ED1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_voice_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0EE1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_voice_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0EF1B413B1900BD9C25 /* icon_messages_more_pic_write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic_write.png; sourceTree = "<group>"; };
+		D0ABD0F01B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_write@2x.png"; sourceTree = "<group>"; };
+		D0ABD0F11B413B1900BD9C25 /* icon_messages_more_pic_write@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_write@3x.png"; sourceTree = "<group>"; };
+		D0ABD0F21B413B1900BD9C25 /* icon_messages_more_pic_write_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_pic_write_p.png; sourceTree = "<group>"; };
+		D0ABD0F31B413B1900BD9C25 /* icon_messages_more_pic_write_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_write_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0F41B413B1900BD9C25 /* icon_messages_more_pic_write_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_pic_write_p@3x.png"; sourceTree = "<group>"; };
+		D0ABD0F51B413B1900BD9C25 /* icon_messages_more_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_video.png; sourceTree = "<group>"; };
+		D0ABD0F61B413B1900BD9C25 /* icon_messages_more_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_video@2x.png"; sourceTree = "<group>"; };
+		D0ABD0F71B413B1900BD9C25 /* icon_messages_more_video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_video@3x.png"; sourceTree = "<group>"; };
+		D0ABD0F81B413B1900BD9C25 /* icon_messages_more_video_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_messages_more_video_p.png; sourceTree = "<group>"; };
+		D0ABD0F91B413B1900BD9C25 /* icon_messages_more_video_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_video_p@2x.png"; sourceTree = "<group>"; };
+		D0ABD0FA1B413B1900BD9C25 /* icon_messages_more_video_p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_messages_more_video_p@3x.png"; sourceTree = "<group>"; };
+		D0B6E2001B4B9C160062E8E4 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		D0B6E2011B4B9C160062E8E4 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		D0B6E2031B4BB1C70062E8E4 /* YBKeyboardEmojListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojListView.h; sourceTree = "<group>"; };
+		D0B6E2041B4BB1C70062E8E4 /* YBKeyboardEmojListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojListView.m; sourceTree = "<group>"; };
+		D0B6E2061B4BB4A70062E8E4 /* YBKeyboardEmojListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojListCell.h; sourceTree = "<group>"; };
+		D0B6E2071B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojListCell.m; sourceTree = "<group>"; };
+		D0B6E2091B4BBE860062E8E4 /* YBKeyboardEmojSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojSet.h; sourceTree = "<group>"; };
+		D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojSet.m; sourceTree = "<group>"; };
+		D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardInputBarButton.h; sourceTree = "<group>"; };
+		D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardInputBarButton.m; sourceTree = "<group>"; };
+		D0F4EBFA1B3A4730008B2324 /* YBEmojDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBEmojDemo.pch; sourceTree = "<group>"; };
+		D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages_icon_more.png; sourceTree = "<group>"; };
+		D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages_icon_more@2x.png"; sourceTree = "<group>"; };
+		D0FBF1281B3CE59900DE52AB /* messages_icon_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages_icon_more@3x.png"; sourceTree = "<group>"; };
+		D0FBF1291B3CE59900DE52AB /* sms_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sms_keyboard.png; sourceTree = "<group>"; };
+		D0FBF12A1B3CE59900DE52AB /* sms_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sms_keyboard@2x.png"; sourceTree = "<group>"; };
+		D0FBF12B1B3CE59900DE52AB /* sms_keyboard@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sms_keyboard@3x.png"; sourceTree = "<group>"; };
+		D0FBF1321B3CE83800DE52AB /* messages_icon_empty_status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages_icon_empty_status.png; sourceTree = "<group>"; };
+		D0FBF1331B3CE83800DE52AB /* messages_icon_empty_status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages_icon_empty_status@2x.png"; sourceTree = "<group>"; };
+		D0FBF1341B3CE83800DE52AB /* messages_icon_empty_status@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages_icon_empty_status@3x.png"; sourceTree = "<group>"; };
+		D0FC9D8C1B4682AB00657435 /* YBKeyboardEmojView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojView.h; sourceTree = "<group>"; };
+		D0FC9D8D1B4682AB00657435 /* YBKeyboardEmojView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojView.m; sourceTree = "<group>"; };
+		D0FC9D8F1B4689F200657435 /* YBKeyboardEmojOptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojOptionView.h; sourceTree = "<group>"; };
+		D0FC9D901B4689F200657435 /* YBKeyboardEmojOptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojOptionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +277,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D035F3AF1B40D95C00F40F62 /* YBKeyboardMoreFunction */ = {
+			isa = PBXGroup;
+			children = (
+				D0ABD0D01B413B1900BD9C25 /* FunctionImages */,
+				D035F3B01B40D95C00F40F62 /* YBKeyboardMoreFunctionView.h */,
+				D035F3B11B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m */,
+				D035F3B51B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.h */,
+				D035F3B61B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.m */,
+				D0ABD0761B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.h */,
+				D0ABD0771B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m */,
+				D035F3B31B40D9AB00F40F62 /* YBKeyboardMoreFunction.plist */,
+			);
+			path = YBKeyboardMoreFunction;
+			sourceTree = "<group>";
+		};
+		D035F3C21B411A8E00F40F62 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D035F3C31B411A8E00F40F62 /* MJConst.h */,
+				D035F3C41B411A8E00F40F62 /* MJConst.m */,
+				D035F3C51B411A8E00F40F62 /* MJExtension.h */,
+				D035F3C61B411A8E00F40F62 /* MJFoundation.h */,
+				D035F3C71B411A8E00F40F62 /* MJFoundation.m */,
+				D035F3C81B411A8E00F40F62 /* MJProperty.h */,
+				D035F3C91B411A8E00F40F62 /* MJProperty.m */,
+				D035F3CA1B411A8E00F40F62 /* MJType.h */,
+				D035F3CB1B411A8E00F40F62 /* MJType.m */,
+				D035F3CC1B411A8E00F40F62 /* NSObject+MJCoding.h */,
+				D035F3CD1B411A8E00F40F62 /* NSObject+MJCoding.m */,
+				D035F3CE1B411A8E00F40F62 /* NSObject+MJKeyValue.h */,
+				D035F3CF1B411A8E00F40F62 /* NSObject+MJKeyValue.m */,
+				D035F3D01B411A8E00F40F62 /* NSObject+MJProperty.h */,
+				D035F3D11B411A8E00F40F62 /* NSObject+MJProperty.m */,
+				D035F3D21B411A8E00F40F62 /* NSString+MJExtension.h */,
+				D035F3D31B411A8E00F40F62 /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		D03B02F61B394EDB0044496F = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +339,23 @@
 		D03B03011B394EDB0044496F /* YBEmojDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D0FC9D8B1B4682AB00657435 /* YBKeyboardEmoj */,
+				D084AC7D1B417D0200861633 /* YBKeyboardVoice */,
+				D035F3AF1B40D95C00F40F62 /* YBKeyboardMoreFunction */,
+				D0FBF1251B3CE59900DE52AB /* Keyboard_Image */,
+				D03B033C1B396B460044496F /* UIView+Extension.h */,
+				D03B033D1B396B460044496F /* UIView+Extension.m */,
 				D03B03051B394EDB0044496F /* AppDelegate.h */,
 				D03B03061B394EDB0044496F /* AppDelegate.m */,
 				D03B03081B394EDB0044496F /* ViewController.h */,
 				D03B03091B394EDB0044496F /* ViewController.m */,
+				D03B03351B394FF70044496F /* YBKeyBoardInputBar.h */,
+				D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */,
+				D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */,
+				D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */,
+				D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */,
 				D03B030B1B394EDB0044496F /* Main.storyboard */,
 				D03B030E1B394EDB0044496F /* Assets.xcassets */,
-				D03B03101B394EDB0044496F /* LaunchScreen.storyboard */,
 				D03B03131B394EDB0044496F /* Info.plist */,
 				D03B03021B394EDB0044496F /* Supporting Files */,
 			);
@@ -117,7 +365,10 @@
 		D03B03021B394EDB0044496F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D07159161B4AA74600A3D9F3 /* EmotionIcons */,
+				D035F3C21B411A8E00F40F62 /* MJExtension */,
 				D03B03031B394EDB0044496F /* main.m */,
+				D0F4EBFA1B3A4730008B2324 /* YBEmojDemo.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +389,117 @@
 				D03B03291B394EDB0044496F /* Info.plist */,
 			);
 			path = YBEmojDemoUITests;
+			sourceTree = "<group>";
+		};
+		D084AC7D1B417D0200861633 /* YBKeyboardVoice */ = {
+			isa = PBXGroup;
+			children = (
+				D084AC7E1B417D2700861633 /* YBKeyboardVoiceView.h */,
+				D084AC7F1B417D2700861633 /* YBKeyboardVoiceView.m */,
+				D084AC811B418AC300861633 /* YBKeyboardTalkbackView.h */,
+				D084AC821B418AC300861633 /* YBKeyboardTalkbackView.m */,
+				D084AC841B418AE900861633 /* YBKeyboardRecordView.h */,
+				D084AC851B418AE900861633 /* YBKeyboardRecordView.m */,
+				D084AC871B4194D100861633 /* YBKeyboardVoiceBillboard.h */,
+				D084AC881B4194D100861633 /* YBKeyboardVoiceBillboard.m */,
+				D084AC8A1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib */,
+			);
+			path = YBKeyboardVoice;
+			sourceTree = "<group>";
+		};
+		D0ABD0D01B413B1900BD9C25 /* FunctionImages */ = {
+			isa = PBXGroup;
+			children = (
+				D0ABD0D11B413B1900BD9C25 /* icon_messages_more_call@2x.png */,
+				D0ABD0D21B413B1900BD9C25 /* icon_messages_more_call@3x.png */,
+				D0ABD0D31B413B1900BD9C25 /* icon_messages_more_call_p.png */,
+				D0ABD0D41B413B1900BD9C25 /* icon_messages_more_call_p@2x.png */,
+				D0ABD0D51B413B1900BD9C25 /* icon_messages_more_call_p@3x.png */,
+				D0ABD0D61B413B1900BD9C25 /* icon_messages_more_callpng.png */,
+				D0ABD0D71B413B1900BD9C25 /* icon_messages_more_camera.png */,
+				D0ABD0D81B413B1900BD9C25 /* icon_messages_more_camera@2x.png */,
+				D0ABD0D91B413B1900BD9C25 /* icon_messages_more_camera@3x.png */,
+				D0ABD0DA1B413B1900BD9C25 /* icon_messages_more_camera_p.png */,
+				D0ABD0DB1B413B1900BD9C25 /* icon_messages_more_camera_p@2x.png */,
+				D0ABD0DC1B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png */,
+				D0ABD0DD1B413B1900BD9C25 /* icon_messages_more_location.png */,
+				D0ABD0DE1B413B1900BD9C25 /* icon_messages_more_location@2x.png */,
+				D0ABD0DF1B413B1900BD9C25 /* icon_messages_more_location@3x.png */,
+				D0ABD0E01B413B1900BD9C25 /* icon_messages_more_location_p.png */,
+				D0ABD0E11B413B1900BD9C25 /* icon_messages_more_location_p@2x.png */,
+				D0ABD0E21B413B1900BD9C25 /* icon_messages_more_location_p@3x.png */,
+				D0ABD0E31B413B1900BD9C25 /* icon_messages_more_pic.png */,
+				D0ABD0E41B413B1900BD9C25 /* icon_messages_more_pic@2x.png */,
+				D0ABD0E51B413B1900BD9C25 /* icon_messages_more_pic@3x.png */,
+				D0ABD0E61B413B1900BD9C25 /* icon_messages_more_pic_p.png */,
+				D0ABD0E71B413B1900BD9C25 /* icon_messages_more_pic_p@2x.png */,
+				D0ABD0E81B413B1900BD9C25 /* icon_messages_more_pic_p@3x.png */,
+				D0ABD0E91B413B1900BD9C25 /* icon_messages_more_pic_voice.png */,
+				D0ABD0EA1B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png */,
+				D0ABD0EB1B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png */,
+				D0ABD0EC1B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png */,
+				D0ABD0ED1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@2x.png */,
+				D0ABD0EE1B413B1900BD9C25 /* icon_messages_more_pic_voice_p@3x.png */,
+				D0ABD0EF1B413B1900BD9C25 /* icon_messages_more_pic_write.png */,
+				D0ABD0F01B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png */,
+				D0ABD0F11B413B1900BD9C25 /* icon_messages_more_pic_write@3x.png */,
+				D0ABD0F21B413B1900BD9C25 /* icon_messages_more_pic_write_p.png */,
+				D0ABD0F31B413B1900BD9C25 /* icon_messages_more_pic_write_p@2x.png */,
+				D0ABD0F41B413B1900BD9C25 /* icon_messages_more_pic_write_p@3x.png */,
+				D0ABD0F51B413B1900BD9C25 /* icon_messages_more_video.png */,
+				D0ABD0F61B413B1900BD9C25 /* icon_messages_more_video@2x.png */,
+				D0ABD0F71B413B1900BD9C25 /* icon_messages_more_video@3x.png */,
+				D0ABD0F81B413B1900BD9C25 /* icon_messages_more_video_p.png */,
+				D0ABD0F91B413B1900BD9C25 /* icon_messages_more_video_p@2x.png */,
+				D0ABD0FA1B413B1900BD9C25 /* icon_messages_more_video_p@3x.png */,
+			);
+			path = FunctionImages;
+			sourceTree = "<group>";
+		};
+		D0FBF1251B3CE59900DE52AB /* Keyboard_Image */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBF1321B3CE83800DE52AB /* messages_icon_empty_status.png */,
+				D0FBF1331B3CE83800DE52AB /* messages_icon_empty_status@2x.png */,
+				D0FBF1341B3CE83800DE52AB /* messages_icon_empty_status@3x.png */,
+				D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */,
+				D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */,
+				D0FBF1281B3CE59900DE52AB /* messages_icon_more@3x.png */,
+				D0FBF1291B3CE59900DE52AB /* sms_keyboard.png */,
+				D0FBF12A1B3CE59900DE52AB /* sms_keyboard@2x.png */,
+				D0FBF12B1B3CE59900DE52AB /* sms_keyboard@3x.png */,
+			);
+			path = Keyboard_Image;
+			sourceTree = "<group>";
+		};
+		D0FC9D8B1B4682AB00657435 /* YBKeyboardEmoj */ = {
+			isa = PBXGroup;
+			children = (
+				D0B6E2011B4B9C160062E8E4 /* NSString+Emoji.h */,
+				D0B6E2001B4B9C160062E8E4 /* NSString+Emoji.m */,
+				D0FC9D8C1B4682AB00657435 /* YBKeyboardEmojView.h */,
+				D0FC9D8D1B4682AB00657435 /* YBKeyboardEmojView.m */,
+				D0FC9D8F1B4689F200657435 /* YBKeyboardEmojOptionView.h */,
+				D0FC9D901B4689F200657435 /* YBKeyboardEmojOptionView.m */,
+				D07159131B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.h */,
+				D07159141B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m */,
+				D07159181B4B665300A3D9F3 /* YBKeyboardEmoj.plist */,
+				D071591A1B4B677B00A3D9F3 /* YBKeyboardEmojOption.h */,
+				D071591B1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m */,
+				D0B6E2091B4BBE860062E8E4 /* YBKeyboardEmojSet.h */,
+				D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */,
+				D09A88361B4BCE4A0048BF07 /* YBKeyboardEmojModel.h */,
+				D09A88371B4BCE4A0048BF07 /* YBKeyboardEmojModel.m */,
+				D0B6E2031B4BB1C70062E8E4 /* YBKeyboardEmojListView.h */,
+				D0B6E2041B4BB1C70062E8E4 /* YBKeyboardEmojListView.m */,
+				D0B6E2061B4BB4A70062E8E4 /* YBKeyboardEmojListCell.h */,
+				D0B6E2071B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m */,
+				D06C33BC1B4D0AC100746107 /* YBKeyboardEmojiButton.h */,
+				D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */,
+				D06C33BF1B4D2A3400746107 /* YBKeyboardEmojiPageControl.h */,
+				D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */,
+			);
+			path = YBKeyboardEmoj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +605,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03B03121B394EDB0044496F /* LaunchScreen.storyboard in Resources */,
+				D0ABD1231B413B1900BD9C25 /* icon_messages_more_video_p@2x.png in Resources */,
+				D0ABD1181B413B1900BD9C25 /* icon_messages_more_pic_voice_p@3x.png in Resources */,
+				D0ABD0FB1B413B1900BD9C25 /* icon_messages_more_call@2x.png in Resources */,
+				D0FBF12C1B3CE59900DE52AB /* messages_icon_more.png in Resources */,
+				D0ABD1011B413B1900BD9C25 /* icon_messages_more_camera.png in Resources */,
+				D0ABD1121B413B1900BD9C25 /* icon_messages_more_pic_p@3x.png in Resources */,
+				D0FBF1371B3CE83800DE52AB /* messages_icon_empty_status@3x.png in Resources */,
+				D0ABD1031B413B1900BD9C25 /* icon_messages_more_camera@3x.png in Resources */,
+				D03B033B1B3962300044496F /* YBKeyBoardInputBar.xib in Resources */,
+				D0ABD11B1B413B1900BD9C25 /* icon_messages_more_pic_write@3x.png in Resources */,
+				D0ABD0FE1B413B1900BD9C25 /* icon_messages_more_call_p@2x.png in Resources */,
+				D0ABD10A1B413B1900BD9C25 /* icon_messages_more_location_p.png in Resources */,
+				D0ABD0FF1B413B1900BD9C25 /* icon_messages_more_call_p@3x.png in Resources */,
+				D0FBF12D1B3CE59900DE52AB /* messages_icon_more@2x.png in Resources */,
+				D0FBF1301B3CE59900DE52AB /* sms_keyboard@2x.png in Resources */,
+				D0ABD10C1B413B1900BD9C25 /* icon_messages_more_location_p@3x.png in Resources */,
+				D035F3B41B40D9AB00F40F62 /* YBKeyboardMoreFunction.plist in Resources */,
+				D07159191B4B665300A3D9F3 /* YBKeyboardEmoj.plist in Resources */,
+				D0ABD10F1B413B1900BD9C25 /* icon_messages_more_pic@3x.png in Resources */,
+				D0ABD11E1B413B1900BD9C25 /* icon_messages_more_pic_write_p@3x.png in Resources */,
+				D07159171B4AA74600A3D9F3 /* EmotionIcons in Resources */,
+				D0ABD1021B413B1900BD9C25 /* icon_messages_more_camera@2x.png in Resources */,
+				D0ABD1051B413B1900BD9C25 /* icon_messages_more_camera_p@2x.png in Resources */,
+				D0FBF1311B3CE59900DE52AB /* sms_keyboard@3x.png in Resources */,
+				D0ABD11A1B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png in Resources */,
+				D0ABD1131B413B1900BD9C25 /* icon_messages_more_pic_voice.png in Resources */,
+				D0ABD1151B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png in Resources */,
+				D0FBF1361B3CE83800DE52AB /* messages_icon_empty_status@2x.png in Resources */,
+				D0ABD1001B413B1900BD9C25 /* icon_messages_more_callpng.png in Resources */,
+				D0ABD10B1B413B1900BD9C25 /* icon_messages_more_location_p@2x.png in Resources */,
+				D0ABD0FC1B413B1900BD9C25 /* icon_messages_more_call@3x.png in Resources */,
+				D0ABD11D1B413B1900BD9C25 /* icon_messages_more_pic_write_p@2x.png in Resources */,
+				D0FBF12E1B3CE59900DE52AB /* messages_icon_more@3x.png in Resources */,
+				D0ABD1071B413B1900BD9C25 /* icon_messages_more_location.png in Resources */,
+				D0ABD1141B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png in Resources */,
+				D0ABD1241B413B1900BD9C25 /* icon_messages_more_video_p@3x.png in Resources */,
+				D084AC8B1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib in Resources */,
+				D0ABD1061B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png in Resources */,
+				D0ABD1081B413B1900BD9C25 /* icon_messages_more_location@2x.png in Resources */,
+				D0ABD1161B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png in Resources */,
+				D0ABD1171B413B1900BD9C25 /* icon_messages_more_pic_voice_p@2x.png in Resources */,
+				D0ABD1191B413B1900BD9C25 /* icon_messages_more_pic_write.png in Resources */,
+				D0FBF1351B3CE83800DE52AB /* messages_icon_empty_status.png in Resources */,
+				D0ABD1041B413B1900BD9C25 /* icon_messages_more_camera_p.png in Resources */,
+				D0ABD1091B413B1900BD9C25 /* icon_messages_more_location@3x.png in Resources */,
+				D0ABD11C1B413B1900BD9C25 /* icon_messages_more_pic_write_p.png in Resources */,
+				D0ABD1221B413B1900BD9C25 /* icon_messages_more_video_p.png in Resources */,
 				D03B030F1B394EDB0044496F /* Assets.xcassets in Resources */,
+				D0ABD1111B413B1900BD9C25 /* icon_messages_more_pic_p@2x.png in Resources */,
+				D0ABD1201B413B1900BD9C25 /* icon_messages_more_video@2x.png in Resources */,
+				D0ABD10E1B413B1900BD9C25 /* icon_messages_more_pic@2x.png in Resources */,
+				D0ABD1211B413B1900BD9C25 /* icon_messages_more_video@3x.png in Resources */,
+				D0ABD1101B413B1900BD9C25 /* icon_messages_more_pic_p.png in Resources */,
+				D0ABD0FD1B413B1900BD9C25 /* icon_messages_more_call_p.png in Resources */,
+				D0FBF12F1B3CE59900DE52AB /* sms_keyboard.png in Resources */,
+				D0ABD10D1B413B1900BD9C25 /* icon_messages_more_pic.png in Resources */,
 				D03B030D1B394EDB0044496F /* Main.storyboard in Resources */,
+				D0ABD11F1B413B1900BD9C25 /* icon_messages_more_video.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +687,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B6E20B1B4BBE860062E8E4 /* YBKeyboardEmojSet.m in Sources */,
+				D035F3D81B411A8E00F40F62 /* NSObject+MJCoding.m in Sources */,
+				D06C33BE1B4D0AC100746107 /* YBKeyboardEmojiButton.m in Sources */,
+				D03B033E1B396B460044496F /* UIView+Extension.m in Sources */,
+				D0B6E2081B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m in Sources */,
+				D084AC891B4194D100861633 /* YBKeyboardVoiceBillboard.m in Sources */,
+				D0FC9D911B4689F200657435 /* YBKeyboardEmojOptionView.m in Sources */,
+				D084AC801B417D2700861633 /* YBKeyboardVoiceView.m in Sources */,
+				D07159151B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m in Sources */,
+				D0ABD0781B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m in Sources */,
+				D035F3D51B411A8E00F40F62 /* MJFoundation.m in Sources */,
+				D03B03371B394FF70044496F /* YBKeyBoardInputBar.m in Sources */,
+				D071591C1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m in Sources */,
+				D0B6E2021B4B9C160062E8E4 /* NSString+Emoji.m in Sources */,
+				D035F3D71B411A8E00F40F62 /* MJType.m in Sources */,
+				D035F3B71B40D9E700F40F62 /* YBkeyboardMoreFunctionModel.m in Sources */,
+				D084AC861B418AE900861633 /* YBKeyboardRecordView.m in Sources */,
+				D09A88381B4BCE4A0048BF07 /* YBKeyboardEmojModel.m in Sources */,
+				D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */,
+				D035F3D41B411A8E00F40F62 /* MJConst.m in Sources */,
+				D035F3B21B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m in Sources */,
+				D06C33C11B4D2A3500746107 /* YBKeyboardEmojiPageControl.m in Sources */,
+				D035F3D61B411A8E00F40F62 /* MJProperty.m in Sources */,
 				D03B030A1B394EDB0044496F /* ViewController.m in Sources */,
 				D03B03071B394EDB0044496F /* AppDelegate.m in Sources */,
+				D035F3D91B411A8E00F40F62 /* NSObject+MJKeyValue.m in Sources */,
+				D035F3DB1B411A8E00F40F62 /* NSString+MJExtension.m in Sources */,
+				D0FC9D8E1B4682AB00657435 /* YBKeyboardEmojView.m in Sources */,
 				D03B03041B394EDB0044496F /* main.m in Sources */,
+				D035F3DA1B411A8E00F40F62 /* NSObject+MJProperty.m in Sources */,
+				D0B6E2051B4BB1C70062E8E4 /* YBKeyboardEmojListView.m in Sources */,
+				D084AC831B418AC300861633 /* YBKeyboardTalkbackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,14 +762,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D03B03101B394EDB0044496F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D03B03111B394EDB0044496F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -363,7 +801,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +838,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -411,10 +849,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yang bin (JF5XG2S7BZ)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YBEmojDemo/YBEmojDemo.pch";
 				INFOPLIST_FILE = YBEmojDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBEmojDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a7bc0baa-e840-4331-af16-f1d253616f99";
+				SHARED_PRECOMPS_DIR = "$(CACHE_ROOT)/YBEmojDemo/YBEmojDemo.pch";
 			};
 			name = Debug;
 		};
@@ -422,10 +865,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yang bin (JF5XG2S7BZ)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YBEmojDemo/YBEmojDemo.pch";
 				INFOPLIST_FILE = YBEmojDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBEmojDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a7bc0baa-e840-4331-af16-f1d253616f99";
+				SHARED_PRECOMPS_DIR = "$(CACHE_ROOT)/YBEmojDemo/YBEmojDemo.pch";
 			};
 			name = Release;
 		};
@@ -457,6 +905,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = YBEmojDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBEmojDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,6 +918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = YBEmojDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBEmojDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +946,7 @@
 				D03B032E1B394EDC0044496F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D03B032F1B394EDC0044496F /* Build configuration list for PBXNativeTarget "YBEmojDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +955,7 @@
 				D03B03311B394EDC0044496F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D03B03321B394EDC0044496F /* Build configuration list for PBXNativeTarget "YBEmojDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +964,7 @@
 				D03B03341B394EDC0044496F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

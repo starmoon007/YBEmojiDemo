@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="YBKeyBoardInputBar" id="lFx-iZ-B85" customClass="YBKeyBoardInputBar">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qc-yq-Ga0" customClass="YBKeyboardInputBarButton">
+                    <rect key="frame" x="5" y="7" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="8BJ-hV-H4l"/>
+                        <constraint firstAttribute="width" constant="30" id="K2v-kD-FUY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="语音">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="voiceAction:" destination="lFx-iZ-B85" eventType="touchUpInside" id="Pty-4U-MAv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-Pj-PC3" customClass="YBKeyboardInputBarButton">
+                    <rect key="frame" x="285" y="6" width="30" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="CTK-jS-rMj"/>
+                        <constraint firstAttribute="height" constant="32" id="yoI-6G-zew"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="多媒体">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="moreAction:" destination="lFx-iZ-B85" eventType="touchUpInside" id="MrR-oD-7bw"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-Oo-i1q">
+                    <rect key="frame" x="40" y="5" width="205" height="34"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfC-af-ECv" customClass="YBKeyboardInputBarButton">
+                    <rect key="frame" x="250" y="7" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="X4t-g2-ZAt"/>
+                        <constraint firstAttribute="height" constant="30" id="mqH-Lf-R3k"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="表情">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="emojAction:" destination="lFx-iZ-B85" eventType="touchUpInside" id="3b5-kn-Zhk"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boi-Dk-3Rr">
+                    <rect key="frame" x="40" y="5" width="205" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9K-xL-jQ1" userLabel="topline">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="VYJ-Wm-5Hb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jON-V0-AOo" userLabel="bottomline">
+                    <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="jqy-Jk-QLf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="0.73696966239999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jON-V0-AOo" secondAttribute="trailing" id="1GK-wk-hBX"/>
+                <constraint firstItem="7qc-yq-Ga0" firstAttribute="leading" secondItem="lFx-iZ-B85" secondAttribute="leading" constant="5" id="3d6-ub-moE"/>
+                <constraint firstItem="qHp-Pj-PC3" firstAttribute="centerY" secondItem="lFx-iZ-B85" secondAttribute="centerY" id="Bux-bh-K1t"/>
+                <constraint firstItem="tF5-Oo-i1q" firstAttribute="top" secondItem="lFx-iZ-B85" secondAttribute="top" constant="5" id="FZw-Ux-rf4"/>
+                <constraint firstItem="boi-Dk-3Rr" firstAttribute="trailing" secondItem="tF5-Oo-i1q" secondAttribute="trailing" id="GuF-Bu-AXD"/>
+                <constraint firstItem="jON-V0-AOo" firstAttribute="leading" secondItem="lFx-iZ-B85" secondAttribute="leading" id="Ij1-sN-qab"/>
+                <constraint firstItem="CfC-af-ECv" firstAttribute="leading" secondItem="tF5-Oo-i1q" secondAttribute="trailing" constant="5" id="LKM-1L-8Ob"/>
+                <constraint firstAttribute="trailing" secondItem="qHp-Pj-PC3" secondAttribute="trailing" constant="5" id="P4V-2s-wMk"/>
+                <constraint firstItem="tF5-Oo-i1q" firstAttribute="leading" secondItem="7qc-yq-Ga0" secondAttribute="trailing" constant="5" id="PNX-Vc-rXa"/>
+                <constraint firstItem="b9K-xL-jQ1" firstAttribute="top" secondItem="lFx-iZ-B85" secondAttribute="top" id="PYR-HP-vvP"/>
+                <constraint firstItem="boi-Dk-3Rr" firstAttribute="bottom" secondItem="tF5-Oo-i1q" secondAttribute="bottom" id="Q97-KU-NbV"/>
+                <constraint firstItem="7qc-yq-Ga0" firstAttribute="centerY" secondItem="lFx-iZ-B85" secondAttribute="centerY" id="Qgj-Ls-2B8"/>
+                <constraint firstAttribute="bottom" secondItem="tF5-Oo-i1q" secondAttribute="bottom" constant="5" id="QwL-Pm-9Ob"/>
+                <constraint firstItem="CfC-af-ECv" firstAttribute="centerY" secondItem="lFx-iZ-B85" secondAttribute="centerY" id="Svd-vo-Phn"/>
+                <constraint firstItem="boi-Dk-3Rr" firstAttribute="leading" secondItem="tF5-Oo-i1q" secondAttribute="leading" id="Tqk-rA-We1"/>
+                <constraint firstItem="b9K-xL-jQ1" firstAttribute="leading" secondItem="lFx-iZ-B85" secondAttribute="leading" id="X6l-5h-Qbt"/>
+                <constraint firstItem="qHp-Pj-PC3" firstAttribute="leading" secondItem="CfC-af-ECv" secondAttribute="trailing" constant="5" id="b7b-Xg-LCQ"/>
+                <constraint firstAttribute="bottom" secondItem="jON-V0-AOo" secondAttribute="bottom" id="l9J-N6-Ro0"/>
+                <constraint firstItem="boi-Dk-3Rr" firstAttribute="top" secondItem="tF5-Oo-i1q" secondAttribute="top" id="osd-VA-0eB"/>
+                <constraint firstAttribute="trailing" secondItem="b9K-xL-jQ1" secondAttribute="trailing" id="tox-p7-Kxz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emoj_button" destination="CfC-af-ECv" id="KHd-CW-qaj"/>
+                <outlet property="input_textView" destination="boi-Dk-3Rr" id="qyc-Wn-AD9"/>
+                <outlet property="moreFunction_button" destination="qHp-Pj-PC3" id="SmJ-Uk-vCl"/>
+                <outlet property="voice_button" destination="7qc-yq-Ga0" id="XK0-x2-wyF"/>
+            </connections>
+            <point key="canvasLocation" x="262" y="353"/>
+        </view>
+    </objects>
+</document>
