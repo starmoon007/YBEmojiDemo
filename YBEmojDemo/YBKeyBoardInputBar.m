@@ -16,11 +16,13 @@
 
 #import "YBKeyboardVoiceView.h"
 
+#import "YBKeyboardTextView.h"
 
 
 
 
-@interface YBKeyBoardInputBar ()<UITextFieldDelegate>
+
+@interface YBKeyBoardInputBar ()<UITextFieldDelegate,YBKeyboardTextViewDelegate>
 
 /** 录音按钮 */
 @property (weak, nonatomic) IBOutlet YBKeyboardInputBarButton *voice_button;
@@ -32,7 +34,14 @@
 @property (weak, nonatomic) IBOutlet YBKeyboardInputBarButton *emoj_button;
 
 /** 文本输入框 */
-@property (weak, nonatomic) IBOutlet UITextView *input_textView;
+@property (weak, nonatomic) IBOutlet YBKeyboardTextView *input_textView;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *textView_bgImageView;
+
+@property (weak, nonatomic) UIView * top_line;
+
+@property (weak, nonatomic) UIView * bottom_line;;
 
 
 /** 表情键盘控件 */
@@ -243,6 +252,8 @@
 
 /** 显示方法方法,是否显示在屏幕外 */
 - (void)showKeyBoardInView:(UIView *)super_view inWindow:(BOOL)inWindow{
+    if (self.superview == super_view)return;
+    
     CGFloat height = super_view.height;
     if (inWindow){
         height = super_view.height - self.height;
@@ -253,7 +264,7 @@
         self.x = 0;
         self.y = height ;
     }
-//    [self.input_textView becomeFirstResponder];
+    self.width = super_view.width;
 }
 
 
@@ -340,6 +351,17 @@
 //    NSLog(@"changeText");
 }
 
+#pragma mark - YBKeyboardTextViewDelegate
+
+- (void)textViewDidChangeContent:(UITextView *)textView withSize:(CGSize )content_size{
+    
+    
+    
+    
+    NSLog(@"%s",__FUNCTION__);
+    
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -388,6 +410,87 @@
     return _voiceView;
 }
 
+-(YBKeyboardInputBarButton *)voice_button{
+    if (_voice_button == nil){
+        YBKeyboardInputBarButton *voice_button = [[YBKeyboardInputBarButton alloc]init];
+        
+        [voice_button addTarget:self action:@selector(voiceAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:voice_button];
+        
+        _voice_button = voice_button;
+    }
+    return _voice_button;
+}
+
+-(YBKeyboardInputBarButton *)moreFunction_button{
+    if (_moreFunction_button == nil){
+        YBKeyboardInputBarButton *moreFunction_button = [[YBKeyboardInputBarButton alloc]init];
+        [moreFunction_button setTitle:nil forState:UIControlStateNormal];
+        [moreFunction_button setNormalStateImageString:@"messages_icon_more" selectedStateImage:@"sms_keyboard"];
+        [moreFunction_button addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:moreFunction_button];
+        
+        _moreFunction_button = moreFunction_button;
+    }
+    return _moreFunction_button;
+}
+
+-(YBKeyboardInputBarButton *)emoj_button{
+    if (_emoj_button == nil){
+        YBKeyboardInputBarButton *emoj_button = [[YBKeyboardInputBarButton alloc]init];
+        
+        [emoj_button setTitle:nil forState:UIControlStateNormal];
+        [emoj_button setNormalStateImageString:@"messages_icon_empty_status" selectedStateImage:@"sms_keyboard"];
+        
+        [emoj_button addTarget:self action:@selector(emojAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:emoj_button];
+        
+        _emoj_button = emoj_button;
+    }
+    return _emoj_button;
+}
+
+-(UIImageView *)textView_bgImageView{
+    if (_textView_bgImageView == nil){
+        UIImageView *textView_bgImageView = [[UIImageView alloc]init];
+        [self addSubview:textView_bgImageView];
+        _textView_bgImageView = textView_bgImageView;
+    }
+    return _textView_bgImageView;
+}
+
+-(YBKeyboardTextView *)input_textView{
+    if (_input_textView == nil){
+        YBKeyboardTextView *input_textView = [[YBKeyboardTextView alloc]init];
+        input_textView.delegate = self;
+        [self addSubview:input_textView];
+        _input_textView = input_textView;
+    }
+    return _input_textView;
+}
+
+-(UIView *)top_line{
+    if (_top_line == nil){
+        UIView *top_line = [[UIView alloc]init];
+        top_line.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:top_line];
+        _top_line = top_line;
+    }
+    return _top_line;
+}
+
+-(UIView *)bottom_line{
+    if (_bottom_line == nil){
+        UIView *bottom_line = [[UIView alloc]init];
+        bottom_line.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:bottom_line];
+        _bottom_line = bottom_line;
+    }
+    return _bottom_line;
+}
+
 
 /** 判断键盘是否激活 （键盘有没有弹起）*/
 -(BOOL)activating{
@@ -422,6 +525,36 @@
 }
 
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    self.voice_button.width = 30;
+    self.voice_button.height = 30;
+    self.voice_button.x = 5;
+    self.voice_button.y = self.height - 7 - self.voice_button.height;
+    
+    self.moreFunction_button.width = 30;
+    self.moreFunction_button.height = 32;
+    self.moreFunction_button.x = self.width - 5 - self.moreFunction_button.width;
+    self.moreFunction_button.y = self.height - 7 - self.moreFunction_button.height;
+    
+    self.emoj_button.width = 30;
+    self.emoj_button.height = 30;
+    self.emoj_button.x = self.moreFunction_button.x - 5 - self.emoj_button.width;
+    self.emoj_button.y = self.height - 7 - self.emoj_button.height;
+    
+    self.textView_bgImageView.x = CGRectGetMaxX(self.voice_button.frame) + 5;
+    self.textView_bgImageView.y = 5;
+    self.textView_bgImageView.width = self.emoj_button.x - 5 - self.textView_bgImageView.x;
+    self.textView_bgImageView.height = self.height - 10;
+    
+    self.input_textView.frame = self.textView_bgImageView.frame;
+    
+    self.top_line.frame = CGRectMake(0, 0, self.width, 0.5);
+    self.bottom_line.frame = CGRectMake(0, self.height - 0.5, self.width, 0.5);
+    
+}
+
 
 #pragma mark - 初始化和销毁方法
 
@@ -430,9 +563,7 @@
 }
 
 + (instancetype)keyBoardInputBar{
-    YBKeyBoardInputBar *inputbar = [[[NSBundle mainBundle] loadNibNamed:@"YBKeyBoardInputBar" owner:nil options:nil] lastObject];
-    inputbar.width = [UIScreen mainScreen].bounds.size.width;
-    return inputbar;
+    return [[[self class] alloc] init];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -452,13 +583,6 @@
 }
 
 
--(void)awakeFromNib{
-    [self.moreFunction_button setTitle:nil forState:UIControlStateNormal];
-    [self.moreFunction_button setNormalStateImageString:@"messages_icon_more" selectedStateImage:@"sms_keyboard"];
-    
-    [self.emoj_button setTitle:nil forState:UIControlStateNormal];
-    [self.emoj_button setNormalStateImageString:@"messages_icon_empty_status" selectedStateImage:@"sms_keyboard"];
-}
 
 
 

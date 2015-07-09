@@ -40,7 +40,6 @@
     self.line.frame = CGRectMake(0, 0, self.width, 0.5);
     
     self.emoj_option_collectionView.frame = self.bounds;
-    
 }
 
 - (void)moveToOptionWithIndex:(NSIndexPath *)indexPath{

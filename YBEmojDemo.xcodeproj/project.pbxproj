@@ -28,6 +28,7 @@
 		D03B03371B394FF70044496F /* YBKeyBoardInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */; };
 		D03B033B1B3962300044496F /* YBKeyBoardInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */; };
 		D03B033E1B396B460044496F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B033D1B396B460044496F /* UIView+Extension.m */; };
+		D0443D441B4E1A6300C95176 /* YBKeyboardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0443D431B4E1A6300C95176 /* YBKeyboardTextView.m */; };
 		D06C33BE1B4D0AC100746107 /* YBKeyboardEmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */; };
 		D06C33C11B4D2A3500746107 /* YBKeyboardEmojiPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */; };
 		D07159151B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D07159141B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m */; };
@@ -161,6 +162,8 @@
 		D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBKeyBoardInputBar.xib; sourceTree = "<group>"; };
 		D03B033C1B396B460044496F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		D03B033D1B396B460044496F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D0443D421B4E1A6300C95176 /* YBKeyboardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardTextView.h; sourceTree = "<group>"; };
+		D0443D431B4E1A6300C95176 /* YBKeyboardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardTextView.m; sourceTree = "<group>"; };
 		D06C33BC1B4D0AC100746107 /* YBKeyboardEmojiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiButton.h; sourceTree = "<group>"; };
 		D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiButton.m; sourceTree = "<group>"; };
 		D06C33BF1B4D2A3400746107 /* YBKeyboardEmojiPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiPageControl.h; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				D03B03351B394FF70044496F /* YBKeyBoardInputBar.h */,
 				D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */,
 				D03B033A1B3962300044496F /* YBKeyBoardInputBar.xib */,
+				D0443D421B4E1A6300C95176 /* YBKeyboardTextView.h */,
+				D0443D431B4E1A6300C95176 /* YBKeyboardTextView.m */,
 				D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */,
 				D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */,
 				D03B030B1B394EDB0044496F /* Main.storyboard */,
@@ -709,6 +714,7 @@
 				D035F3D41B411A8E00F40F62 /* MJConst.m in Sources */,
 				D035F3B21B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m in Sources */,
 				D06C33C11B4D2A3500746107 /* YBKeyboardEmojiPageControl.m in Sources */,
+				D0443D441B4E1A6300C95176 /* YBKeyboardTextView.m in Sources */,
 				D035F3D61B411A8E00F40F62 /* MJProperty.m in Sources */,
 				D03B030A1B394EDB0044496F /* ViewController.m in Sources */,
 				D03B03071B394EDB0044496F /* AppDelegate.m in Sources */,

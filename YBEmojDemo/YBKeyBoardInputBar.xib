@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -55,7 +55,7 @@
                         <action selector="emojAction:" destination="lFx-iZ-B85" eventType="touchUpInside" id="3b5-kn-Zhk"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boi-Dk-3Rr">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boi-Dk-3Rr" customClass="YBKeyboardTextView">
                     <rect key="frame" x="40" y="5" width="205" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -105,6 +105,7 @@
                 <outlet property="emoj_button" destination="CfC-af-ECv" id="KHd-CW-qaj"/>
                 <outlet property="input_textView" destination="boi-Dk-3Rr" id="qyc-Wn-AD9"/>
                 <outlet property="moreFunction_button" destination="qHp-Pj-PC3" id="SmJ-Uk-vCl"/>
+                <outlet property="textView_bgImageView" destination="tF5-Oo-i1q" id="sfR-8L-tt3"/>
                 <outlet property="voice_button" destination="7qc-yq-Ga0" id="XK0-x2-wyF"/>
             </connections>
             <point key="canvasLocation" x="262" y="353"/>

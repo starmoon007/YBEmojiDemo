@@ -26,16 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    YBKeyboardInputBarButton *button = [YBKeyboardInputBarButton buttonWithType:UIButtonTypeSystem];
-    button.frame = CGRectMake(30, 110, 100, 100);
-    button.backgroundColor = [UIColor redColor];
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(aaa) forControlEvents:UIControlEventTouchUpInside];
-    
-    [button becomeFirstResponder];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickMoreFunctionButton:) name:YBKeyboardDidClickFuctionButtonNotification object:nil];
 }
+
 
 - (void)didClickMoreFunctionButton:(NSNotification *)notif{
     NSDictionary *userInfo = notif.userInfo;
@@ -46,18 +39,15 @@
 }
 
 
-- (void)aaa{
-    
-}
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
     if (self.keyboardInputBar.activating){
         [self.view endEditing:YES];
     }else{
         [self.keyboardInputBar showKeyBoardInView:self.view inWindow:YES];
     }
-    
 }
 
 
