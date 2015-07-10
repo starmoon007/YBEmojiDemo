@@ -25,19 +25,19 @@
 @interface YBKeyBoardInputBar ()<UITextFieldDelegate,YBKeyboardTextViewDelegate>
 
 /** 录音按钮 */
-@property (weak, nonatomic) IBOutlet YBKeyboardInputBarButton *voice_button;
+@property (weak, nonatomic) YBKeyboardInputBarButton *voice_button;
 
 /** 更多按钮 */
-@property (weak, nonatomic) IBOutlet YBKeyboardInputBarButton *moreFunction_button;
+@property (weak, nonatomic) YBKeyboardInputBarButton *moreFunction_button;
 
 /** 标签按钮 */
-@property (weak, nonatomic) IBOutlet YBKeyboardInputBarButton *emoj_button;
+@property (weak, nonatomic) YBKeyboardInputBarButton *emoj_button;
 
 /** 文本输入框 */
-@property (weak, nonatomic) IBOutlet YBKeyboardTextView *input_textView;
+@property (weak, nonatomic) YBKeyboardTextView *input_textView;
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *textView_bgImageView;
+@property (weak, nonatomic) UIImageView *textView_bgImageView;
 
 @property (weak, nonatomic) UIView * top_line;
 
@@ -66,6 +66,7 @@
 /** 遮盖视图 当显示自定义键盘时遮盖 input_view */
 @property (strong, nonatomic) UIView * cover_view;
 
+//@property (weak, nonatomic) UIView * test_view;
 
 
 @end
@@ -75,7 +76,7 @@
 
 
 /** 录音按钮点击响应 */
-- (IBAction)voiceAction:(UIButton *)voice_button {
+- (void)voiceAction:(UIButton *)voice_button {
     self.emoj_button.selected = NO;
     self.moreFunction_button.selected = NO;
     voice_button.selected = ! voice_button.selected;
@@ -96,7 +97,7 @@
 }
 
 /** 表情按钮点击响应 */
-- (IBAction)emojAction:(UIButton *)emojButton {
+- (void)emojAction:(UIButton *)emojButton {
     self.voice_button.selected = NO;
     self.moreFunction_button.selected = NO;
     
@@ -118,7 +119,7 @@
 
 
 /** 更多按钮点击响应 */
-- (IBAction)moreAction:(UIButton *)moreFunction_button {
+- (void)moreAction:(UIButton *)moreFunction_button {
     self.voice_button.selected = NO;
     self.emoj_button.selected = NO;
     moreFunction_button.selected = !moreFunction_button.selected;
@@ -253,7 +254,7 @@
 /** 显示方法方法,是否显示在屏幕外 */
 - (void)showKeyBoardInView:(UIView *)super_view inWindow:(BOOL)inWindow{
     if (self.superview == super_view)return;
-    
+    self.height = 44;
     CGFloat height = super_view.height;
     if (inWindow){
         height = super_view.height - self.height;
@@ -340,27 +341,65 @@
     [self.replace_tf endEditing:YES];
 }
 
-- (void)endEditing{
-//    NSLog(@"endEditing");
-//    [self endEditing:YES];
+//- (void)endEditing{
+////    NSLog(@"endEditing");
+////    [self endEditing:YES];
+//    
+//    
+//}
+//
+//- (void)changeText{
+////    NSLog(@"changeText");
+//}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
     
+    self.voice_button.width = 30;
+    self.voice_button.height = 30;
+    self.voice_button.x = 5;
+    self.voice_button.y = self.height - 7 - self.voice_button.height;
     
+    self.moreFunction_button.width = 30;
+    self.moreFunction_button.height = 32;
+    self.moreFunction_button.x = self.width - 5 - self.moreFunction_button.width;
+    self.moreFunction_button.y = self.height - 7 - self.moreFunction_button.height;
+    
+    self.emoj_button.width = 30;
+    self.emoj_button.height = 30;
+    self.emoj_button.x = self.moreFunction_button.x - 5 - self.emoj_button.width;
+    self.emoj_button.y = self.height - 7 - self.emoj_button.height;
+    
+    self.textView_bgImageView.x = CGRectGetMaxX(self.voice_button.frame) + 5;
+    self.textView_bgImageView.y = 5;
+    self.textView_bgImageView.width = self.emoj_button.x - 5 - self.textView_bgImageView.x;
+    self.textView_bgImageView.height = self.height - 10;
+    
+    if (self.input_textView.height < 34){
+        self.input_textView.width = self.textView_bgImageView.width;
+        self.input_textView.height = self.input_textView.content_height;
+        self.input_textView.center = self.textView_bgImageView.center;
+    }else{
+        self.input_textView.frame = self.textView_bgImageView.frame;
+    }
+    
+    self.top_line.frame = CGRectMake(0, 0, self.width, 0.5);
+    self.bottom_line.frame = CGRectMake(0, self.height - 0.5, self.width, 0.5);
 }
 
-- (void)changeText{
-//    NSLog(@"changeText");
-}
 
 #pragma mark - YBKeyboardTextViewDelegate
 
 - (void)textViewDidChangeContent:(UITextView *)textView withSize:(CGSize )content_size{
     
+//    if (content_size.height == self.input_textView.height)return;
     
+    CGFloat distance = content_size.height + 10 - self.height;
     
-    
-    NSLog(@"%s",__FUNCTION__);
-    
+    self.height = content_size.height + 10;
+    self.y = self.y - distance;
 }
+
 
 #pragma mark - UITextFieldDelegate
 
@@ -413,7 +452,9 @@
 -(YBKeyboardInputBarButton *)voice_button{
     if (_voice_button == nil){
         YBKeyboardInputBarButton *voice_button = [[YBKeyboardInputBarButton alloc]init];
-        
+        [voice_button setTitle:@"语音" forState:UIControlStateNormal];
+        [voice_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        voice_button.titleLabel.font = [UIFont systemFontOfSize:12];
         [voice_button addTarget:self action:@selector(voiceAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:voice_button];
@@ -455,7 +496,7 @@
 -(UIImageView *)textView_bgImageView{
     if (_textView_bgImageView == nil){
         UIImageView *textView_bgImageView = [[UIImageView alloc]init];
-        [self addSubview:textView_bgImageView];
+        [self insertSubview:textView_bgImageView belowSubview:self.input_textView];
         _textView_bgImageView = textView_bgImageView;
     }
     return _textView_bgImageView;
@@ -464,6 +505,7 @@
 -(YBKeyboardTextView *)input_textView{
     if (_input_textView == nil){
         YBKeyboardTextView *input_textView = [[YBKeyboardTextView alloc]init];
+        input_textView.font = [UIFont systemFontOfSize:15];
         input_textView.delegate = self;
         [self addSubview:input_textView];
         _input_textView = input_textView;
@@ -513,6 +555,16 @@
     return _replace_tf;
 }
 
+//-(UIView *)test_view{
+//    if (_test_view == nil){
+//        UIView *test_view = [[UIView alloc]init];
+//        test_view.backgroundColor = [UIColor redColor];
+//        [self addSubview:test_view];
+//        _test_view = test_view;
+//    }
+//    return _test_view;
+//}
+
 -(UIView *)cover_view{
     if (_cover_view == nil){
         self.cover_view = [[UIView alloc]initWithFrame:self.input_textView.frame];
@@ -525,37 +577,6 @@
 }
 
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    self.voice_button.width = 30;
-    self.voice_button.height = 30;
-    self.voice_button.x = 5;
-    self.voice_button.y = self.height - 7 - self.voice_button.height;
-    
-    self.moreFunction_button.width = 30;
-    self.moreFunction_button.height = 32;
-    self.moreFunction_button.x = self.width - 5 - self.moreFunction_button.width;
-    self.moreFunction_button.y = self.height - 7 - self.moreFunction_button.height;
-    
-    self.emoj_button.width = 30;
-    self.emoj_button.height = 30;
-    self.emoj_button.x = self.moreFunction_button.x - 5 - self.emoj_button.width;
-    self.emoj_button.y = self.height - 7 - self.emoj_button.height;
-    
-    self.textView_bgImageView.x = CGRectGetMaxX(self.voice_button.frame) + 5;
-    self.textView_bgImageView.y = 5;
-    self.textView_bgImageView.width = self.emoj_button.x - 5 - self.textView_bgImageView.x;
-    self.textView_bgImageView.height = self.height - 10;
-    
-    self.input_textView.frame = self.textView_bgImageView.frame;
-    
-    self.top_line.frame = CGRectMake(0, 0, self.width, 0.5);
-    self.bottom_line.frame = CGRectMake(0, self.height - 0.5, self.width, 0.5);
-    
-}
-
-
 #pragma mark - 初始化和销毁方法
 
 -(void)dealloc{
@@ -563,7 +584,7 @@
 }
 
 + (instancetype)keyBoardInputBar{
-    return [[[self class] alloc] init];
+    return [[self alloc] init];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -574,17 +595,31 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [YBNotificationCenter addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-        [YBNotificationCenter addObserver:self selector:@selector(beginEditing) name:UITextViewTextDidBeginEditingNotification object:self.input_textView];
-        [YBNotificationCenter addObserver:self selector:@selector(endEditing) name:UITextViewTextDidEndEditingNotification object:self.input_textView];
-        [YBNotificationCenter addObserver:self selector:@selector(changeText) name:UITextViewTextDidChangeNotification object:self.input_textView];
+        [self setup];
     }
     return self;
 }
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
 
 
+- (void)setup{
+    self.backgroundColor = [UIColor colorWithRed:0.86 green:0.95 blue:0.87 alpha:1];
+    [YBNotificationCenter addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [YBNotificationCenter addObserver:self selector:@selector(beginEditing) name:UITextViewTextDidBeginEditingNotification object:self.input_textView];
+//    [YBNotificationCenter addObserver:self selector:@selector(endEditing) name:UITextViewTextDidEndEditingNotification object:self.input_textView];
+//    [YBNotificationCenter addObserver:self selector:@selector(changeText) name:UITextViewTextDidChangeNotification object:self.input_textView];
+    
+    
+}
 
 
 

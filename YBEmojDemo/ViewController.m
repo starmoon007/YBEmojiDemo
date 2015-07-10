@@ -56,7 +56,6 @@
     if (_keyboardInputBar == nil){
         _keyboardInputBar = [YBKeyBoardInputBar keyBoardInputBar];
     }
-    
     return _keyboardInputBar;
 }
 

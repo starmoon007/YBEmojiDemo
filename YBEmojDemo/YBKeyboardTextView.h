@@ -25,4 +25,7 @@
 /** 占位文字的颜色 */
 @property (nonatomic, strong) UIColor *placeholderColor;
 
+@property (assign, nonatomic) CGFloat content_height;
+
+
 @end
