@@ -87,6 +87,8 @@
 		D0B6E2051B4BB1C70062E8E4 /* YBKeyboardEmojListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E2041B4BB1C70062E8E4 /* YBKeyboardEmojListView.m */; };
 		D0B6E2081B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E2071B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m */; };
 		D0B6E20B1B4BBE860062E8E4 /* YBKeyboardEmojSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */; };
+		D0CEB6A01B535A7800A4F3DA /* YBKeyboardEmojiPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */; };
+		D0CEB6A21B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */; };
 		D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */; };
 		D0FBF12C1B3CE59900DE52AB /* messages_icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */; };
 		D0FBF12D1B3CE59900DE52AB /* messages_icon_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */; };
@@ -235,6 +237,9 @@
 		D0B6E2071B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojListCell.m; sourceTree = "<group>"; };
 		D0B6E2091B4BBE860062E8E4 /* YBKeyboardEmojSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojSet.h; sourceTree = "<group>"; };
 		D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojSet.m; sourceTree = "<group>"; };
+		D0CEB69E1B535A7800A4F3DA /* YBKeyboardEmojiPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiPopView.h; sourceTree = "<group>"; };
+		D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiPopView.m; sourceTree = "<group>"; };
+		D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoticon_keyboard_magnifier@2x.png"; sourceTree = "<group>"; };
 		D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardInputBarButton.h; sourceTree = "<group>"; };
 		D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardInputBarButton.m; sourceTree = "<group>"; };
 		D0F4EBFA1B3A4730008B2324 /* YBEmojDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBEmojDemo.pch; sourceTree = "<group>"; };
@@ -500,6 +505,9 @@
 				D06C33BD1B4D0AC100746107 /* YBKeyboardEmojiButton.m */,
 				D06C33BF1B4D2A3400746107 /* YBKeyboardEmojiPageControl.h */,
 				D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */,
+				D0CEB69E1B535A7800A4F3DA /* YBKeyboardEmojiPopView.h */,
+				D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */,
+				D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */,
 			);
 			path = YBKeyboardEmoj;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 				D0ABD11A1B413B1900BD9C25 /* icon_messages_more_pic_write@2x.png in Resources */,
 				D0ABD1131B413B1900BD9C25 /* icon_messages_more_pic_voice.png in Resources */,
 				D0ABD1151B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png in Resources */,
+				D0CEB6A21B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png in Resources */,
 				D0FBF1361B3CE83800DE52AB /* messages_icon_empty_status@2x.png in Resources */,
 				D0ABD1001B413B1900BD9C25 /* icon_messages_more_callpng.png in Resources */,
 				D0ABD10B1B413B1900BD9C25 /* icon_messages_more_location_p@2x.png in Resources */,
@@ -707,6 +716,7 @@
 				D084AC861B418AE900861633 /* YBKeyboardRecordView.m in Sources */,
 				D09A88381B4BCE4A0048BF07 /* YBKeyboardEmojModel.m in Sources */,
 				D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */,
+				D0CEB6A01B535A7800A4F3DA /* YBKeyboardEmojiPopView.m in Sources */,
 				D035F3D41B411A8E00F40F62 /* MJConst.m in Sources */,
 				D035F3B21B40D95C00F40F62 /* YBKeyboardMoreFunctionView.m in Sources */,
 				D06C33C11B4D2A3500746107 /* YBKeyboardEmojiPageControl.m in Sources */,

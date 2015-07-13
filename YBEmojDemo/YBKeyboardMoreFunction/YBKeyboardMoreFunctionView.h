@@ -11,6 +11,8 @@
 #import "YBkeyboardMoreFunctionModel.h"
 
 UIKIT_EXTERN NSString * const YBKeyboardDidClickFuctionButtonNotification;
+UIKIT_EXTERN NSString * const YBKeyboardDidClickEmojiNotification;
+
 
 @interface YBKeyboardMoreFunctionView : UIView
 

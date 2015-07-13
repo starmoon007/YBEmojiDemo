@@ -377,7 +377,6 @@
     
     if (self.input_textView.height < 34){
         self.input_textView.width = self.textView_bgImageView.width;
-        self.input_textView.height = self.input_textView.content_height;
         self.input_textView.center = self.textView_bgImageView.center;
     }else{
         self.input_textView.frame = self.textView_bgImageView.frame;
@@ -391,13 +390,21 @@
 #pragma mark - YBKeyboardTextViewDelegate
 
 - (void)textViewDidChangeContent:(UITextView *)textView withSize:(CGSize )content_size{
+    CGFloat height = content_size.height;
     
-//    if (content_size.height == self.input_textView.height)return;
+    self.input_textView.center = self.textView_bgImageView.center;
     
-    CGFloat distance = content_size.height + 10 - self.height;
     
-    self.height = content_size.height + 10;
-    self.y = self.y - distance;
+    if (content_size.height < 19) height = 34;
+    
+    CGFloat distance = height + 10 - self.height;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.height = height + 10;
+        self.y = self.y - distance;
+    }];
+    
+    
 }
 
 

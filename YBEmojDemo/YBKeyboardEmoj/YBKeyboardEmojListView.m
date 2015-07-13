@@ -14,6 +14,7 @@
 #import "YBKeyboardEmojSet.h"
 
 #import "YBKeyboardEmojiButton.h"
+#import "YBKeyboardEmojiPopView.h"
 
 
 @interface YBKeyboardEmojListView ()<UIScrollViewDelegate>
@@ -33,6 +34,10 @@
 @property (strong, nonatomic) NSMutableArray * emoj_model_array;
 
 @property (assign, nonatomic) NSInteger index;
+
+
+
+@property (strong, nonatomic) YBKeyboardEmojiPopView * popView;
 
 
 
@@ -81,6 +86,9 @@
             emoji_model = self.emoj_model_array[i];
             [self.bg_scrollView addSubview:emoji_view];
             [self.emoj_view_array addObject:emoji_view];
+            
+            [emoji_view addTarget:self action:@selector(clickEmoji:) forControlEvents:UIControlEventTouchUpInside];
+            
         }else if (i >= emoji_count){// 表情控件有多
             emoji_view = self.emoj_view_array[i];
             emoji_view.hidden = YES;
@@ -174,6 +182,61 @@
 }
 
 
+
+
+- (void)clickEmoji:(YBKeyboardEmojiButton *)button{
+    YBKeyboardEmojModel * emoji_model = button.emoji_model;
+    
+    if (emoji_model != nil){
+        
+        [self.popView showBtn:button];
+        
+        [YBNotificationCenter postNotificationName:YBKeyboardDidClickEmojiNotification object:emoji_model];
+        
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.popView removeFromSuperview];
+    });
+}
+
+- (void)longPress: (UILongPressGestureRecognizer *)longPress{
+    
+    CGPoint location = [longPress locationInView:longPress.view];
+    YBKeyboardEmojiButton *emoji_button = [self emojiButtonWithLocation:location];
+    
+    switch (longPress.state) {
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:{
+            [self.popView removeFromSuperview];
+            
+            if (emoji_button){
+                [YBNotificationCenter postNotificationName:YBKeyboardDidClickEmojiNotification object:emoji_button.emoji_model];
+            }
+            
+        }break;
+            
+        case UIGestureRecognizerStateBegan:
+        case UIGestureRecognizerStateChanged:{
+            [self.popView showBtn:emoji_button];
+            
+        }break;default:break;
+    }
+}
+
+- (YBKeyboardEmojiButton *)emojiButtonWithLocation:(CGPoint)location{
+    
+    NSUInteger count = self.emoj_view_array.count;
+    for (int i=0; i< count ;i++){
+        YBKeyboardEmojiButton *btn = self.emoj_view_array[i];
+        if (CGRectContainsPoint(btn.frame, location)){
+            return btn;
+        }
+    }
+    return nil;
+}
+
+
 #pragma mark - Set and Get
 
 
@@ -210,6 +273,14 @@
     return _bg_scrollView;
 }
 
+-(YBKeyboardEmojiPopView *)popView{
+    if (_popView == nil){
+        _popView = [YBKeyboardEmojiPopView popView];
+        _popView.backgroundColor = [UIColor clearColor];
+    }
+    return _popView;
+}
+
 
 -(NSMutableArray *)deleted_view_array{
     if (_deleted_view_array == nil){
@@ -228,5 +299,14 @@
     return _emoj_view_array;
 }
 
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self.bg_scrollView addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
+    }
+    return self;
+}
 
 @end

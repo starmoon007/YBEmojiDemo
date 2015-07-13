@@ -19,6 +19,8 @@
 
 NSString* const YBKeyboardDidClickFuctionButtonNotification =  @"YBKeyboardDidClickFuctionButtonNotification";
 
+NSString* const YBKeyboardDidClickEmojiNotification =  @"YBKeyboardDidClickEmojiNotification";
+
 @interface YBKeyboardMoreFunctionView ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) UIScrollView * base_scrollView;

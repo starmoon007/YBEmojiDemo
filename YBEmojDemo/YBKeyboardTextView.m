@@ -32,12 +32,6 @@
     self.yb_delegate = delegate;
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    self.bounces = NO;
-
-}
 
 
 - (void)drawRect:(CGRect)rect
@@ -99,12 +93,19 @@
 #pragma mark - KVO
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    CGFloat height =self.contentSize.height;
-    height=height<34?34:height;
+    CGFloat height =self.contentSize.height - 16;
+    height=height<35?18:height;
     
-    if (height>100)height=100;
+    if (height>100){
+        height=100;
+        self.bounces = YES;
+    }else{
+        self.bounces = NO;
+    }
     
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y,self.frame.size.width,height>100?100:height);
+    [UIView animateWithDuration:0.2 animations:^{
+        self.height = height;
+    }];
     
     if ([self.yb_delegate respondsToSelector:@selector(textViewDidChangeContent:withSize:)]){
         [self.yb_delegate textViewDidChangeContent:self withSize:CGSizeMake(self.content_size.width, height)];
@@ -117,35 +118,6 @@
 - (void)textDidChange
 {
     self.beginEdit = NO;
-    
-//    if (self.contentSize.height != self.content_height){
-//        CGFloat height = 0;
-//        
-//        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-//            CGRect textFrame=[[self layoutManager]usedRectForTextContainer:[self textContainer]];
-//            height = textFrame.size.height;
-//        }else {
-//            height = self.contentSize.height;
-//        }
-//        
-//        if (self.content_height == height)return;// content_height 没有改变 不需要改变自身高度
-//        
-//        self.content_height = height;
-//        
-//        if ([self.yb_delegate respondsToSelector:@selector(textViewDidChangeContent:withSize:)]
-//            && height < 100){
-//            
-//            if (height < 34) height = 34;
-//            
-//            self.content_size = CGSizeMake(self.contentSize.width, height);
-//            
-////            self.contentSize = self.content_size;
-//            
-////            self.width = self.contentSize.height;
-//            
-//            [self.yb_delegate textViewDidChangeContent:self withSize:CGSizeMake(self.content_size.width, height)];
-//        }
-//    }
     
     [self setNeedsDisplay];
 }

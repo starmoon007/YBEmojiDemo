@@ -10,6 +10,8 @@
 #import "YBKeyBoardInputBar.h"
 
 #import "YBKeyboardInputBarButton.h"
+#import "YBKeyboardEmojModel.h"
+
 
 @interface ViewController ()<UITextViewDelegate>
 
@@ -27,6 +29,9 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickMoreFunctionButton:) name:YBKeyboardDidClickFuctionButtonNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickEmoji:) name:YBKeyboardDidClickEmojiNotification object:nil];
 }
 
 
@@ -38,6 +43,12 @@
     NSLog(@"你点击了第%lu个名字叫作%@的按钮",(unsigned long)functionModel.index,functionModel.title);
 }
 
+
+- (void)didClickEmoji: (NSNotification *)notif{
+    YBKeyboardEmojModel *emoji = notif.object;
+    NSLog(@"%@",emoji.chs);
+    
+}
 
 
 
