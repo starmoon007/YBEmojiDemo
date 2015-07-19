@@ -10,6 +10,8 @@
 
 #import "UIView+Extension.h"
 
+#import "YBKeyboardEmojModel.h"
+
 @interface YBKeyboardTextView ()
 
 @property (assign, nonatomic) BOOL beginEdit;
@@ -18,11 +20,87 @@
 
 @property (assign, nonatomic) id<YBKeyboardTextViewDelegate> yb_delegate;
 
+
+@property (copy, nonatomic) NSString * textView_string;
+
+//@property (strong, nonatomic) NSMutableArray * string_array;
+
+
 @end
 
 
 @implementation YBKeyboardTextView
 
+
+- (void)insertEmoji:(YBKeyboardEmojModel *)emoji{
+    if (emoji.type == YBKeyboardEmojModelType_emoji){// emoji表情
+        [self insertText:emoji.code.emoji];
+    }else if (emoji.png_name){
+        
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]init];
+        
+        [attributedText appendAttributedString:self.attributedText];
+        
+        // 加载图片
+        
+        NSTextAttachment *attch = [[NSTextAttachment alloc]init];
+        
+        NSString *image_path_string = [NSString stringWithFormat:@"%@%@",emoji.emoj_option_urlString,emoji.png_name];
+        
+        if ([[image_path_string lowercaseString] hasSuffix:@".png"]){
+            image_path_string = [image_path_string substringWithRange:NSMakeRange(0,image_path_string.length - 4)];
+            image_path_string = [NSString stringWithFormat:@"%@@2x",image_path_string];
+        }
+        
+        NSString *image_path = [[NSBundle mainBundle] pathForResource:image_path_string ofType:@"png"];
+        
+        UIImage *image = [UIImage imageWithContentsOfFile:image_path];
+        
+        attch.image = image;
+        
+        CGFloat attchWH = self.font.lineHeight;
+        attch.bounds = CGRectMake(0, -3, attchWH, attchWH);
+        NSAttributedString *imageStr = [NSAttributedString attributedStringWithAttachment:attch];
+        
+        NSUInteger loc = self.selectedRange.location;
+        
+        [attributedText insertAttributedString:imageStr atIndex:loc];
+        
+        [attributedText addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedText.length)];
+        
+        self.attributedText =  attributedText;
+        
+        self.selectedRange = NSMakeRange(loc + 1, 0);
+    }
+    
+    
+    BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
+    
+}
+
+- (void)deleteEmoji{
+    
+    if (self.attributedText.length <=0)return;
+    
+    NSUInteger loc = self.selectedRange.location;
+    
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]init];
+    
+    [attributedText appendAttributedString:self.attributedText];
+    
+    [attributedText deleteCharactersInRange:NSMakeRange(loc - 1, 1)];
+    
+    
+    self.attributedText= attributedText;
+    
+    BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
+    
+    
+}
 
 
 -(void)setDelegate:(id<YBKeyboardTextViewDelegate>)delegate{
@@ -72,7 +150,7 @@
 
 
 - (void)setup{
-    self.backgroundColor = [UIColor grayColor];
+    self.backgroundColor = [UIColor clearColor];
     self.contentInset = UIEdgeInsetsMake(-8, 0, -8, 0);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
@@ -102,9 +180,10 @@
     }else{
         self.bounces = NO;
     }
-    
+    [self scrollRangeToVisible:NSMakeRange(self.text.length, 1)];
     [UIView animateWithDuration:0.2 animations:^{
         self.height = height;
+        
     }];
     
     if ([self.yb_delegate respondsToSelector:@selector(textViewDidChangeContent:withSize:)]){
@@ -118,6 +197,11 @@
 - (void)textDidChange
 {
     self.beginEdit = NO;
+    BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
+    
+    
     
     [self setNeedsDisplay];
 }
@@ -135,6 +219,7 @@
 }
 
 #pragma Set and Get
+
 
 - (void)setPlaceholder:(NSString *)placeholder
 {

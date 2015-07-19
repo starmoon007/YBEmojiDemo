@@ -28,6 +28,13 @@
 /** 表情集 是否是编码形式 */
 @property (assign, nonatomic) BOOL isCode;
 
+/** 是否是 直接发送的图*/
+@property (assign, nonatomic) BOOL isLargeEmoji;
+
+
+
+
+
 
 
 

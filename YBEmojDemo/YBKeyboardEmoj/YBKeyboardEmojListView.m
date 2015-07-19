@@ -6,6 +6,12 @@
 //  Copyright © 2015年 macbook air. All rights reserved.
 //
 
+
+
+
+// 放弃使用
+
+
 #import "YBKeyboardEmojListView.h"
 
 #import "UIView+Extension.h"
@@ -135,24 +141,27 @@
     count = delete_count > page_count ? delete_count : page_count ;
     
     for (int i=0; i< count; i++){
-        UIView *delete_view = nil;
+        UIButton *delete_button = nil;
         
         if (i >= delete_count){// 删除按钮不够
-            delete_view = [[UIView alloc]init];
-            delete_view.backgroundColor = [UIColor whiteColor];
-            [self.bg_scrollView addSubview:delete_view];
-            [self.deleted_view_array addObject:delete_view];
+            delete_button = [[UIButton alloc]init];
+            delete_button.backgroundColor = [UIColor whiteColor];
+            [delete_button setImage:[UIImage imageNamed:@"compose_emotion_delete@2x"] forState:UIControlStateNormal];
+            [delete_button setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted@2x"] forState:UIControlStateHighlighted];
+            [delete_button addTarget:self action:@selector(deleteEmoji:) forControlEvents:UIControlEventTouchUpInside];
+            [self.bg_scrollView addSubview:delete_button];
+            [self.deleted_view_array addObject:delete_button];
         }else if (i > page_count){// 删除按钮有多 隐藏
-            delete_view = self.deleted_view_array[i];
-            delete_view.hidden = YES;
+            delete_button = self.deleted_view_array[i];
+            delete_button.hidden = YES;
         }else{//
-            delete_view = self.deleted_view_array[i];
-            delete_view.hidden = NO;
+            delete_button = self.deleted_view_array[i];
+            delete_button.hidden = NO;
         }
-        delete_view.width = itemW;
-        delete_view.height = itemH;
-        delete_view.x = self.bg_scrollView.width * (i + 1) - inset - itemW;
-        delete_view.y = self.bg_scrollView.height - inset - itemH;
+        delete_button.width = itemW;
+        delete_button.height = itemH;
+        delete_button.x = self.bg_scrollView.width * (i + 1) - inset - itemW;
+        delete_button.y = self.bg_scrollView.height - inset - itemH;
     }
     
     if (self.backward ){
@@ -198,6 +207,11 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.popView removeFromSuperview];
     });
+}
+
+- (void)deleteEmoji:(UIButton *)btn{
+    
+    [YBNotificationCenter postNotificationName:YBKeyboardDeletedEmojiNotification object:nil];
 }
 
 - (void)longPress: (UILongPressGestureRecognizer *)longPress{

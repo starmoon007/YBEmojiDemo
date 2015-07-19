@@ -18,6 +18,9 @@
 
 #import "YBKeyboardTextView.h"
 
+#import "YBKeyboardEmojModel.h"
+#import "NSString+Emoji.h"
+
 
 
 
@@ -276,7 +279,6 @@
     self.switchingDefaultKeyboard = YES;
     [self.replace_tf endEditing:YES];
     
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.input_textView becomeFirstResponder];
         self.switchingDefaultKeyboard = NO;
@@ -285,6 +287,21 @@
 
 
 #pragma mark - Notification Action
+
+
+- (void)didClickEmoji:(NSNotification *)notif{
+    
+    YBKeyboardEmojModel *emoji_model = notif.object;
+    [self.input_textView insertEmoji:emoji_model];
+}
+
+
+- (void)deletedEmoji:(NSNotification *)notif{
+    
+    [self.input_textView deleteBackward];
+    
+}
+
 - (void)keyboardDidChangeFrame:(NSNotification *)notif{
     
     CGFloat keyboardHeight = [notif.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
@@ -371,15 +388,19 @@
     self.emoj_button.y = self.height - 7 - self.emoj_button.height;
     
     self.textView_bgImageView.x = CGRectGetMaxX(self.voice_button.frame) + 5;
-    self.textView_bgImageView.y = 5;
+    self.textView_bgImageView.y = 3;
     self.textView_bgImageView.width = self.emoj_button.x - 5 - self.textView_bgImageView.x;
-    self.textView_bgImageView.height = self.height - 10;
+    self.textView_bgImageView.height = self.height - 6;
     
     if (self.input_textView.height < 34){
         self.input_textView.width = self.textView_bgImageView.width;
-        self.input_textView.center = self.textView_bgImageView.center;
+        self.input_textView.center = CGPointMake(self.textView_bgImageView.width /2.0f, self.textView_bgImageView.height /2.0f);
     }else{
         self.input_textView.frame = self.textView_bgImageView.frame;
+        self.input_textView.x = 0;
+        self.input_textView.y = 2;
+        self.input_textView.width = self.textView_bgImageView.width;
+        self.input_textView.height = self.textView_bgImageView.height - 4;
     }
     
     self.top_line.frame = CGRectMake(0, 0, self.width, 0.5);
@@ -392,8 +413,7 @@
 - (void)textViewDidChangeContent:(UITextView *)textView withSize:(CGSize )content_size{
     CGFloat height = content_size.height;
     
-    self.input_textView.center = self.textView_bgImageView.center;
-    
+    self.input_textView.center = CGPointMake(self.textView_bgImageView.width /2.0f, self.textView_bgImageView.height /2.0f);
     
     if (content_size.height < 19) height = 34;
     
@@ -428,6 +448,8 @@
 -(YBKeyboardEmojView *)emojView{
     if (_emojView == nil){
         self.emojView = [[YBKeyboardEmojView alloc]init];
+        NSIndexPath *index = [NSIndexPath indexPathForRow:7 inSection:3];
+        _emojView.page_content_index = index;
         _emojView.width = self.width;
         _emojView.height = 216;
         _emojView.backgroundColor = [UIColor whiteColor];
@@ -503,7 +525,9 @@
 -(UIImageView *)textView_bgImageView{
     if (_textView_bgImageView == nil){
         UIImageView *textView_bgImageView = [[UIImageView alloc]init];
-        [self insertSubview:textView_bgImageView belowSubview:self.input_textView];
+        textView_bgImageView.userInteractionEnabled = YES;
+        textView_bgImageView.image = [[UIImage imageNamed:@"YBtextView_bgImage@2x"] stretchableImageWithLeftCapWidth:4 topCapHeight:16];
+        [self addSubview:textView_bgImageView];
         _textView_bgImageView = textView_bgImageView;
     }
     return _textView_bgImageView;
@@ -514,7 +538,8 @@
         YBKeyboardTextView *input_textView = [[YBKeyboardTextView alloc]init];
         input_textView.font = [UIFont systemFontOfSize:15];
         input_textView.delegate = self;
-        [self addSubview:input_textView];
+        
+        [self.textView_bgImageView addSubview:input_textView];
         _input_textView = input_textView;
     }
     return _input_textView;
@@ -574,7 +599,7 @@
 
 -(UIView *)cover_view{
     if (_cover_view == nil){
-        self.cover_view = [[UIView alloc]initWithFrame:self.input_textView.frame];
+//        self.cover_view = [[UIView alloc]initWithFrame:self.input_textView.frame];
         _cover_view.backgroundColor = [UIColor clearColor];
         _cover_view.userInteractionEnabled = YES;
         [_cover_view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickCoverView:)]];
@@ -591,6 +616,7 @@
 }
 
 + (instancetype)keyBoardInputBar{
+    
     return [[self alloc] init];
 }
 
@@ -619,11 +645,12 @@
 
 
 - (void)setup{
-    self.backgroundColor = [UIColor colorWithRed:0.86 green:0.95 blue:0.87 alpha:1];
+    self.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     [YBNotificationCenter addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [YBNotificationCenter addObserver:self selector:@selector(beginEditing) name:UITextViewTextDidBeginEditingNotification object:self.input_textView];
-//    [YBNotificationCenter addObserver:self selector:@selector(endEditing) name:UITextViewTextDidEndEditingNotification object:self.input_textView];
-//    [YBNotificationCenter addObserver:self selector:@selector(changeText) name:UITextViewTextDidChangeNotification object:self.input_textView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickEmoji:) name:YBKeyboardDidClickEmojiNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deletedEmoji:) name:YBKeyboardDeletedEmojiNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deletedEmoji:) name:YBKeyboardSendActionNotification object:nil];
     
     
 }

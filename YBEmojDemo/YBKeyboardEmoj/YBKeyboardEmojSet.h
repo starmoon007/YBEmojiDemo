@@ -18,7 +18,13 @@
 @property (strong, nonatomic) YBKeyboardEmojOption * emoj_option;
 
 /** 表情集 里面的表情数组 */
-@property (strong, nonatomic) NSMutableArray * emoj_array;
+@property (strong, nonatomic) NSArray * emoj_array;
+
+/** 该表情分多少页显示 */
+@property (assign, nonatomic) NSUInteger page_count;
+
+/** 当前是第几页 */
+@property (assign, nonatomic) NSUInteger page_index;
 
 
 @end

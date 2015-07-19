@@ -12,6 +12,10 @@
 
 UIKIT_EXTERN NSString * const YBKeyboardDidClickFuctionButtonNotification;
 UIKIT_EXTERN NSString * const YBKeyboardDidClickEmojiNotification;
+UIKIT_EXTERN NSString * const YBKeyboardDeletedEmojiNotification;
+UIKIT_EXTERN NSString * const YBKeyboardShowSendButtonNotification;
+UIKIT_EXTERN NSString * const YBKeyboardActivateSendButtonNotification;
+UIKIT_EXTERN NSString * const YBKeyboardSendActionNotification;
 
 
 @interface YBKeyboardMoreFunctionView : UIView

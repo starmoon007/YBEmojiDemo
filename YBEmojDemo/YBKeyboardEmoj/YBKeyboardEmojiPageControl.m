@@ -22,6 +22,7 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeState:) name:YBKeyBoardEmojiDragEmojiListView object:nil];
         
+        self.enabled = NO;
         self.pageIndicatorTintColor = [UIColor lightGrayColor];
         self.currentPageIndicatorTintColor = [UIColor grayColor];
         

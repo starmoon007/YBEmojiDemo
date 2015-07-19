@@ -22,7 +22,7 @@
     if (_emoji_model.code){
         [self setTitle:_emoji_model.code.emoji forState:UIControlStateNormal];
         [self setImage:nil forState:UIControlStateNormal];
-    }else{
+    }else if (_emoji_model.png_name){
         
         [self setTitle:nil forState:UIControlStateNormal];
         
@@ -38,6 +38,8 @@
         UIImage *image = [UIImage imageWithContentsOfFile:image_path];
         
         [self setImage:image forState:UIControlStateNormal];
+        
+        _emoji_model.emoj_option_urlString = self.path;
     }
 }
 

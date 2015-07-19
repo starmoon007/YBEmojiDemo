@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+Emoji.h"
+
 
 typedef NS_ENUM(NSInteger, YBKeyboardEmojModelType) {
     YBKeyboardEmojModelType_defaul =0,
@@ -33,6 +35,9 @@ typedef NS_ENUM(NSInteger, YBKeyboardEmojModelType) {
 
 /** 表情类型 */
 @property (assign, nonatomic) YBKeyboardEmojModelType type;
+
+/** 表情集 的本地地址*/
+@property (copy, nonatomic) NSString * emoj_option_urlString;
 
 
 

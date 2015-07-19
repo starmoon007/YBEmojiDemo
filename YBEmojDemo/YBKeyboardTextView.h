@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class YBKeyboardTextView;
+@class YBKeyboardEmojModel;
 
 @protocol YBKeyboardTextViewDelegate <NSObject,UITextViewDelegate>
 
@@ -26,6 +27,9 @@
 @property (nonatomic, strong) UIColor *placeholderColor;
 
 @property (assign, nonatomic) CGFloat content_height;
+
+- (void)insertEmoji:(YBKeyboardEmojModel *)emoji;
+
 
 
 @end

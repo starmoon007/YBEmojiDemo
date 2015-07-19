@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>isLargeEmoji</key>
+		<false/>
 		<key>isCode</key>
 		<false/>
 		<key>emoj_option_name</key>
@@ -12,11 +14,13 @@
 		<key>emoj_option_indexImageName</key>
 		<string>d_hehe@2x.png</string>
 		<key>index</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>emoj_option_urlString</key>
 		<string>EmotionIcons/default/</string>
 	</dict>
 	<dict>
+		<key>isLargeEmoji</key>
+		<false/>
 		<key>isCode</key>
 		<true/>
 		<key>emoj_option_name</key>
@@ -26,11 +30,13 @@
 		<key>emoj_option_indexImageName</key>
 		<string>0x1f603</string>
 		<key>index</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>emoj_option_urlString</key>
 		<string>EmotionIcons/emoji/</string>
 	</dict>
 	<dict>
+		<key>isLargeEmoji</key>
+		<false/>
 		<key>isCode</key>
 		<false/>
 		<key>emoj_option_name</key>
@@ -40,7 +46,7 @@
 		<key>emoj_option_indexImageName</key>
 		<string>lxh_toule.png</string>
 		<key>index</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>emoj_option_urlString</key>
 		<string>EmotionIcons/lxh/</string>
 	</dict>

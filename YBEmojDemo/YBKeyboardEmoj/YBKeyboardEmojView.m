@@ -20,7 +20,6 @@
 
 @interface YBKeyboardEmojView ()<UICollectionViewDataSource,UICollectionViewDelegate,YBKeyboardEmojOptionViewDelegate>
 
-
 @property (weak, nonatomic) YBKeyboardEmojOptionView * emojOptionView;
 
 @property (weak, nonatomic) UICollectionView * emojList_collectionView;
@@ -31,6 +30,7 @@
 
 /** 当前显示的表情集 */
 @property (strong, nonatomic) NSIndexPath * show_index;
+
 
 @end
 
@@ -56,18 +56,18 @@
     self.emojList_collectionView.height = self.height - self.emojOptionView.height - self.pageControl.height;
 }
 
+
+- (void)sendAction:(UIButton *)send_button{
+    
+    
+    
+}
+
 #pragma mark - UICollectionViewDataSource
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     YBKeyboardEmojListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YBKeyboardEmojListCell" forIndexPath:indexPath];
-    if (self.show_index.row <= indexPath.row){// 往后滑 新出现的表情集要是第一页
-        cell.backward = YES;
-    }else{// 往前滑 新出现的表情集要是最后一页
-        cell.backward = NO;
-    }
-    
-    [self.emojOptionView moveToOptionWithIndex:indexPath];
-    self.show_index = indexPath;
+    cell.page_count_index = self.page_content_index;
     cell.emoj_set = self.emojOption_array[indexPath.row];
     return cell;
 }
@@ -78,24 +78,18 @@
 }
 
 
+#pragma mark - UIScrollViewDelegate
 
-//#pragma mark - UIScrollViewDelegate
-//
-//-(void)scrollViewDidScroll:(nonnull UIScrollView *)scrollView{
-//    
-//    NSUInteger offSetX = (NSUInteger)(scrollView.contentOffset.x + scrollView.width /2);
-//    
-//    NSUInteger index = offSetX / ((NSUInteger)scrollView.width);
-//    
-//    NSUInteger count = (NSUInteger) scrollView.contentSize.width / scrollView.width;
-//    
-//    if (index != self.index){
-//        [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyBoardEmojiDragEmojiListView object:nil userInfo:@{@"index": @(index) , @"count" : @(count) }];
-//        
-//        self.index = index;
-//    }
-//    
-//}
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSUInteger index = scrollView.contentOffset.x / scrollView.width;
+    if (index < self.emojOption_array.count){
+        YBKeyboardEmojSet *emoji_set = self.emojOption_array[index];
+        self.pageControl.numberOfPages = emoji_set.page_count;
+        self.pageControl.currentPage = emoji_set.page_index;
+        
+        [self.emojOptionView moveToOptionWithIndex:emoji_set.emoj_option.index];
+    }
+}
 
 
 
@@ -103,15 +97,11 @@
 
 -(void)keyboardEmojOptionView:(YBKeyboardEmojOptionView *)keyboardEmojOptionView didClickOptionWithOptionModel:(YBKeyboardEmojOption *)emoji_option withIndex:(NSUInteger)index{
     
-    [self.emojList_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+//    [self.emojList_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     
 }
 
-
-
-
 #pragma mark - Set and Get
-
 
 -(NSMutableArray *)emojOption_array{
     if (_emojOption_array == nil){
@@ -123,13 +113,46 @@
         NSUInteger count = option_array.count;
         for (int i=0; i<count; i++){
             YBKeyboardEmojOption *emoj_option = option_array[i];
-            YBKeyboardEmojSet *emoj_set = [[YBKeyboardEmojSet alloc]init];
-            emoj_set.emoj_option = emoj_option;
-            [_emojOption_array addObject:emoj_set];
+            
+            NSString *path_string = [NSString stringWithFormat:@"%@info.plist",emoj_option.emoj_option_urlString];
+            NSString *path = [[NSBundle mainBundle] pathForResource:path_string ofType:nil];
+            NSArray *emoji_model_array = [YBKeyboardEmojModel objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
+            
+            // 每一页显示多少个表情（最后一个是删除按钮 所以要减去一个）
+            NSUInteger count_of_page = self.page_content_index.row * self.page_content_index.section - 1;
+            // 这个表情多少页
+            NSUInteger page_count = (emoji_model_array.count + count_of_page - 1) / (count_of_page);
+            
+            for (int i=0; i<page_count ; i++){
+                YBKeyboardEmojSet *emoj_set = [[YBKeyboardEmojSet alloc]init];
+                emoj_set.emoj_option = emoj_option;
+                emoj_set.page_count = page_count;
+                emoj_set.page_index = i;
+                // 计算这一页的表情范围
+                NSRange range;
+                range.location = i * count_of_page;
+                // left：剩余的表情个数（可以截取的）
+                NSUInteger left = emoji_model_array.count - range.location;
+                if (left >= count_of_page) { // 这一页足够20个
+                    range.length = count_of_page;
+                } else {
+                    range.length = left;
+                }
+                emoj_set.emoj_array = [emoji_model_array subarrayWithRange:range];
+                [_emojOption_array addObject:emoj_set];
+            }
         }
+        
+        // 给pagecontroll一个初始值，初始值跟第一组表情相关
+        YBKeyboardEmojSet *first_emoji_set = [_emojOption_array firstObject];
+        self.pageControl.numberOfPages = first_emoji_set.page_count;
+        self.pageControl.currentPage = first_emoji_set.page_index;
+        
+        [self.emojOptionView moveToOptionWithIndex:first_emoji_set.emoj_option.index];
     }
     return _emojOption_array;
 }
+
 
 
 -(YBKeyboardEmojOptionView *)emojOptionView{
@@ -165,6 +188,7 @@
         emojList_collectionView.dataSource = self;
         emojList_collectionView.delegate = self;
         emojList_collectionView.pagingEnabled = YES;
+//        emojList_collectionView.bounces = NO;
         [self addSubview:emojList_collectionView];
         [emojList_collectionView registerClass:[YBKeyboardEmojListCell class] forCellWithReuseIdentifier:@"YBKeyboardEmojListCell"];
         _emojList_collectionView = emojList_collectionView;

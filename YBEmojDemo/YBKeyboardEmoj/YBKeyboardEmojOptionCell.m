@@ -87,6 +87,8 @@
 }
 
 
+
+
 -(UIView *)line{
     if (_line == nil){
         UIView *line = [[UIView alloc]init];

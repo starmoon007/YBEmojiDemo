@@ -11,9 +11,10 @@
 
 @interface YBKeyboardEmojListCell : UICollectionViewCell
 
-@property (assign, nonatomic) BOOL backward;
+//@property (assign, nonatomic) BOOL backward;
 
 @property (strong, nonatomic) YBKeyboardEmojSet * emoj_set;
 
+@property (strong, nonatomic) NSIndexPath * page_count_index;
 
 @end

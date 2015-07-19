@@ -26,6 +26,8 @@
 
 @property (strong, nonatomic) NSArray * option_array;
 
-- (void)moveToOptionWithIndex:(NSIndexPath *)indexPath;
+//@property (assign, nonatomic) BOOL showSendButton;
+
+- (void)moveToOptionWithIndex:(NSUInteger )index;
 
 @end

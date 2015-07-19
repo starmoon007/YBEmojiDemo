@@ -89,6 +89,9 @@
 		D0B6E20B1B4BBE860062E8E4 /* YBKeyboardEmojSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6E20A1B4BBE860062E8E4 /* YBKeyboardEmojSet.m */; };
 		D0CEB6A01B535A7800A4F3DA /* YBKeyboardEmojiPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */; };
 		D0CEB6A21B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */; };
+		D0E4D2631B589647007BB512 /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */; };
+		D0E4D2641B589647007BB512 /* compose_emotion_delete_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */; };
+		D0E4D2681B58F19B007BB512 /* YBtextView_bgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */; };
 		D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */; };
 		D0FBF12C1B3CE59900DE52AB /* messages_icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */; };
 		D0FBF12D1B3CE59900DE52AB /* messages_icon_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */; };
@@ -240,6 +243,9 @@
 		D0CEB69E1B535A7800A4F3DA /* YBKeyboardEmojiPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiPopView.h; sourceTree = "<group>"; };
 		D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiPopView.m; sourceTree = "<group>"; };
 		D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoticon_keyboard_magnifier@2x.png"; sourceTree = "<group>"; };
+		D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
+		D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete_highlighted@2x.png"; sourceTree = "<group>"; };
+		D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YBtextView_bgImage@2x.png"; sourceTree = "<group>"; };
 		D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardInputBarButton.h; sourceTree = "<group>"; };
 		D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardInputBarButton.m; sourceTree = "<group>"; };
 		D0F4EBFA1B3A4730008B2324 /* YBEmojDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBEmojDemo.pch; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				D0443D431B4E1A6300C95176 /* YBKeyboardTextView.m */,
 				D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */,
 				D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */,
+				D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */,
 				D03B030B1B394EDB0044496F /* Main.storyboard */,
 				D03B030E1B394EDB0044496F /* Assets.xcassets */,
 				D03B03131B394EDB0044496F /* Info.plist */,
@@ -507,6 +514,8 @@
 				D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */,
 				D0CEB69E1B535A7800A4F3DA /* YBKeyboardEmojiPopView.h */,
 				D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */,
+				D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */,
+				D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */,
 				D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */,
 			);
 			path = YBKeyboardEmoj;
@@ -643,6 +652,7 @@
 				D0ABD1151B413B1900BD9C25 /* icon_messages_more_pic_voice@3x.png in Resources */,
 				D0CEB6A21B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png in Resources */,
 				D0FBF1361B3CE83800DE52AB /* messages_icon_empty_status@2x.png in Resources */,
+				D0E4D2641B589647007BB512 /* compose_emotion_delete_highlighted@2x.png in Resources */,
 				D0ABD1001B413B1900BD9C25 /* icon_messages_more_callpng.png in Resources */,
 				D0ABD10B1B413B1900BD9C25 /* icon_messages_more_location_p@2x.png in Resources */,
 				D0ABD0FC1B413B1900BD9C25 /* icon_messages_more_call@3x.png in Resources */,
@@ -652,6 +662,7 @@
 				D0ABD1141B413B1900BD9C25 /* icon_messages_more_pic_voice@2x.png in Resources */,
 				D0ABD1241B413B1900BD9C25 /* icon_messages_more_video_p@3x.png in Resources */,
 				D084AC8B1B422F3B00861633 /* YBKeyboardVoiceBillboard.xib in Resources */,
+				D0E4D2681B58F19B007BB512 /* YBtextView_bgImage@2x.png in Resources */,
 				D0ABD1061B413B1900BD9C25 /* icon_messages_more_camera_p@3x.png in Resources */,
 				D0ABD1081B413B1900BD9C25 /* icon_messages_more_location@2x.png in Resources */,
 				D0ABD1161B413B1900BD9C25 /* icon_messages_more_pic_voice_p.png in Resources */,
@@ -672,6 +683,7 @@
 				D0FBF12F1B3CE59900DE52AB /* sms_keyboard.png in Resources */,
 				D0ABD10D1B413B1900BD9C25 /* icon_messages_more_pic.png in Resources */,
 				D03B030D1B394EDB0044496F /* Main.storyboard in Resources */,
+				D0E4D2631B589647007BB512 /* compose_emotion_delete@2x.png in Resources */,
 				D0ABD11F1B413B1900BD9C25 /* icon_messages_more_video.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
