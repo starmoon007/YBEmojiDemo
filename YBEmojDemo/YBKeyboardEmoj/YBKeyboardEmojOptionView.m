@@ -103,6 +103,7 @@
 #pragma mark - UICollectionViewDelegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     if ([self.delegate respondsToSelector:@selector(keyboardEmojOptionView:didClickOptionWithOptionModel: withIndex:)]){
         YBKeyboardEmojOption * emoji_option = self.option_array[indexPath.row];
         [self.delegate keyboardEmojOptionView:self didClickOptionWithOptionModel:emoji_option withIndex:indexPath.row];

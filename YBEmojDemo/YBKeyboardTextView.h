@@ -30,6 +30,8 @@
 
 - (void)insertEmoji:(YBKeyboardEmojModel *)emoji;
 
+@property (readonly,assign,nonatomic) NSMutableString * textView_string;
+
 
 
 @end

@@ -21,6 +21,8 @@
 #import "YBKeyboardEmojModel.h"
 #import "NSString+Emoji.h"
 
+#import "YBKeyboardEmojModel.h"
+#import "YBKeyboardEmojiAttachment.h"
 
 
 
@@ -287,6 +289,12 @@
 
 
 #pragma mark - Notification Action
+
+- (void)sendAction:(NSNotification *)notif{
+    
+    NSLog(@"%@",self.input_textView.textView_string);
+    
+}
 
 
 - (void)didClickEmoji:(NSNotification *)notif{
@@ -650,7 +658,7 @@
     [YBNotificationCenter addObserver:self selector:@selector(beginEditing) name:UITextViewTextDidBeginEditingNotification object:self.input_textView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickEmoji:) name:YBKeyboardDidClickEmojiNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deletedEmoji:) name:YBKeyboardDeletedEmojiNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deletedEmoji:) name:YBKeyboardSendActionNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendAction:) name:YBKeyboardSendActionNotification object:nil];
     
     
 }

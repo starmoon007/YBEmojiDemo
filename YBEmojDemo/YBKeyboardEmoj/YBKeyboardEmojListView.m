@@ -257,7 +257,7 @@
 -(void)setEmoji_set:(YBKeyboardEmojSet *)emoji_set{
     _emoji_set = emoji_set;
     
-    self.emoj_model_array = _emoji_set.emoj_array;
+//    self.emoj_model_array = _emoji_set.emoj_array;
 }
 
 -(void)setEmoj_model_array:(NSMutableArray *)emoj_model_array{

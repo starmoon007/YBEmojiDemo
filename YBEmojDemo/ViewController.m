@@ -31,7 +31,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickMoreFunctionButton:) name:YBKeyboardDidClickFuctionButtonNotification object:nil];
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickEmoji:) name:YBKeyboardDidClickEmojiNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didClickEmoji:) name:YBKeyboardDidClickEmojiNotification object:nil];
 }
 
 
@@ -44,11 +44,11 @@
 }
 
 
-- (void)didClickEmoji: (NSNotification *)notif{
-    YBKeyboardEmojModel *emoji = notif.object;
-    NSLog(@"%@",emoji.chs);
-    
-}
+//- (void)didClickEmoji: (NSNotification *)notif{
+//    YBKeyboardEmojModel *emoji = notif.object;
+//    NSLog(@"%@",emoji.chs);
+//    
+//}
 
 
 

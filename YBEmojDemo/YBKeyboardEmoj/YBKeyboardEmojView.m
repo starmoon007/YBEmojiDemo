@@ -57,11 +57,7 @@
 }
 
 
-- (void)sendAction:(UIButton *)send_button{
-    
-    
-    
-}
+
 
 #pragma mark - UICollectionViewDataSource
 
@@ -97,8 +93,17 @@
 
 -(void)keyboardEmojOptionView:(YBKeyboardEmojOptionView *)keyboardEmojOptionView didClickOptionWithOptionModel:(YBKeyboardEmojOption *)emoji_option withIndex:(NSUInteger)index{
     
-//    [self.emojList_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    NSString *str = [NSString stringWithFormat:@"emoj_option.index = %lu",(unsigned long)index];
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:str];
+    NSArray *results = [self.emojOption_array filteredArrayUsingPredicate: predicate];
+    
+    YBKeyboardEmojSet *emoji_set = [results firstObject];
+    
+    [self.emojList_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:[self.emojOption_array indexOfObject:emoji_set] inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    
+    self.pageControl.numberOfPages = emoji_set.page_count;
+    self.pageControl.currentPage = emoji_set.page_index;
 }
 
 #pragma mark - Set and Get

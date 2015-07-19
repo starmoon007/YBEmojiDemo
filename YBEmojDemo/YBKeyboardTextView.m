@@ -12,6 +12,8 @@
 
 #import "YBKeyboardEmojModel.h"
 
+#import "YBKeyboardEmojiAttachment.h"
+
 @interface YBKeyboardTextView ()
 
 @property (assign, nonatomic) BOOL beginEdit;
@@ -19,11 +21,6 @@
 @property (assign, nonatomic) CGSize content_size;
 
 @property (assign, nonatomic) id<YBKeyboardTextViewDelegate> yb_delegate;
-
-
-@property (copy, nonatomic) NSString * textView_string;
-
-//@property (strong, nonatomic) NSMutableArray * string_array;
 
 
 @end
@@ -43,7 +40,8 @@
         
         // 加载图片
         
-        NSTextAttachment *attch = [[NSTextAttachment alloc]init];
+        YBKeyboardEmojiAttachment *attch = [[YBKeyboardEmojiAttachment alloc]init];
+        attch.emoji_model = emoji;
         
         NSString *image_path_string = [NSString stringWithFormat:@"%@%@",emoji.emoj_option_urlString,emoji.png_name];
         
@@ -77,28 +75,6 @@
     BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
-    
-}
-
-- (void)deleteEmoji{
-    
-    if (self.attributedText.length <=0)return;
-    
-    NSUInteger loc = self.selectedRange.location;
-    
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]init];
-    
-    [attributedText appendAttributedString:self.attributedText];
-    
-    [attributedText deleteCharactersInRange:NSMakeRange(loc - 1, 1)];
-    
-    
-    self.attributedText= attributedText;
-    
-    BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
-    
     
 }
 
@@ -168,6 +144,12 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+-(void)deleteBackward{
+    [super deleteBackward];
+    
+    
+}
+
 #pragma mark - KVO
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -200,8 +182,6 @@
     BOOL hasText = self.attributedText.length > 0 ? YES : NO ;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:YBKeyboardActivateSendButtonNotification object:@(hasText)];
-    
-    
     
     [self setNeedsDisplay];
 }
@@ -265,7 +245,43 @@
     return _content_height;
 }
 
-
+-(NSMutableString *)textView_string{
+    NSAttributedString *string = self.attributedText;
+    
+    NSDictionary *attributeDict;
+    
+    NSRange effectiveRange = { 0, 0 };
+    
+    NSMutableString *textView_text = [[NSMutableString alloc]init];
+    
+    do {
+        
+        NSRange range;
+        
+        range = NSMakeRange (NSMaxRange(effectiveRange),
+                             
+                             [string length] - NSMaxRange(effectiveRange));
+        
+        attributeDict = [string attributesAtIndex: range.location
+                         
+                            longestEffectiveRange: &effectiveRange
+                         
+                                          inRange: range];
+        YBKeyboardEmojiAttachment *attach = attributeDict[@"NSAttachment"];
+        if (attach != nil && [attach isKindOfClass:[YBKeyboardEmojiAttachment class]]){// 是表情
+            YBKeyboardEmojModel *emoji_model = attach.emoji_model;
+            
+            [textView_text appendString:emoji_model.chs];
+        }else{// 是文字
+            
+            NSString *range_string = [[string attributedSubstringFromRange:effectiveRange] string];
+            [textView_text appendString:range_string];
+        }
+        
+    } while (NSMaxRange(effectiveRange) < [string length]);
+    
+    return textView_text;
+}
 
 
 

@@ -92,6 +92,8 @@
 		D0E4D2631B589647007BB512 /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */; };
 		D0E4D2641B589647007BB512 /* compose_emotion_delete_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */; };
 		D0E4D2681B58F19B007BB512 /* YBtextView_bgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */; };
+		D0E4D26F1B5B4FAB007BB512 /* YBKeyboardText.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4D26E1B5B4FAB007BB512 /* YBKeyboardText.m */; };
+		D0E4D2721B5B9328007BB512 /* YBKeyboardEmojiAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4D2711B5B9328007BB512 /* YBKeyboardEmojiAttachment.m */; };
 		D0F4EBF41B39B4D6008B2324 /* YBKeyboardInputBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */; };
 		D0FBF12C1B3CE59900DE52AB /* messages_icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1261B3CE59900DE52AB /* messages_icon_more.png */; };
 		D0FBF12D1B3CE59900DE52AB /* messages_icon_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FBF1271B3CE59900DE52AB /* messages_icon_more@2x.png */; };
@@ -246,6 +248,10 @@
 		D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
 		D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete_highlighted@2x.png"; sourceTree = "<group>"; };
 		D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YBtextView_bgImage@2x.png"; sourceTree = "<group>"; };
+		D0E4D26D1B5B4FAB007BB512 /* YBKeyboardText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardText.h; sourceTree = "<group>"; };
+		D0E4D26E1B5B4FAB007BB512 /* YBKeyboardText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardText.m; sourceTree = "<group>"; };
+		D0E4D2701B5B9328007BB512 /* YBKeyboardEmojiAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardEmojiAttachment.h; sourceTree = "<group>"; };
+		D0E4D2711B5B9328007BB512 /* YBKeyboardEmojiAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardEmojiAttachment.m; sourceTree = "<group>"; };
 		D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyboardInputBarButton.h; sourceTree = "<group>"; };
 		D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyboardInputBarButton.m; sourceTree = "<group>"; };
 		D0F4EBFA1B3A4730008B2324 /* YBEmojDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBEmojDemo.pch; sourceTree = "<group>"; };
@@ -365,6 +371,8 @@
 				D03B03361B394FF70044496F /* YBKeyBoardInputBar.m */,
 				D0443D421B4E1A6300C95176 /* YBKeyboardTextView.h */,
 				D0443D431B4E1A6300C95176 /* YBKeyboardTextView.m */,
+				D0E4D26D1B5B4FAB007BB512 /* YBKeyboardText.h */,
+				D0E4D26E1B5B4FAB007BB512 /* YBKeyboardText.m */,
 				D0F4EBF21B39B4D6008B2324 /* YBKeyboardInputBarButton.h */,
 				D0F4EBF31B39B4D6008B2324 /* YBKeyboardInputBarButton.m */,
 				D0E4D2671B58F19B007BB512 /* YBtextView_bgImage@2x.png */,
@@ -514,6 +522,8 @@
 				D06C33C01B4D2A3500746107 /* YBKeyboardEmojiPageControl.m */,
 				D0CEB69E1B535A7800A4F3DA /* YBKeyboardEmojiPopView.h */,
 				D0CEB69F1B535A7800A4F3DA /* YBKeyboardEmojiPopView.m */,
+				D0E4D2701B5B9328007BB512 /* YBKeyboardEmojiAttachment.h */,
+				D0E4D2711B5B9328007BB512 /* YBKeyboardEmojiAttachment.m */,
 				D0E4D2611B589647007BB512 /* compose_emotion_delete@2x.png */,
 				D0E4D2621B589647007BB512 /* compose_emotion_delete_highlighted@2x.png */,
 				D0CEB6A11B53637100A4F3DA /* emoticon_keyboard_magnifier@2x.png */,
@@ -713,12 +723,14 @@
 				D035F3D81B411A8E00F40F62 /* NSObject+MJCoding.m in Sources */,
 				D06C33BE1B4D0AC100746107 /* YBKeyboardEmojiButton.m in Sources */,
 				D03B033E1B396B460044496F /* UIView+Extension.m in Sources */,
+				D0E4D26F1B5B4FAB007BB512 /* YBKeyboardText.m in Sources */,
 				D0B6E2081B4BB4A70062E8E4 /* YBKeyboardEmojListCell.m in Sources */,
 				D084AC891B4194D100861633 /* YBKeyboardVoiceBillboard.m in Sources */,
 				D0FC9D911B4689F200657435 /* YBKeyboardEmojOptionView.m in Sources */,
 				D084AC801B417D2700861633 /* YBKeyboardVoiceView.m in Sources */,
 				D07159151B4A9E5300A3D9F3 /* YBKeyboardEmojOptionCell.m in Sources */,
 				D0ABD0781B4134DA00BD9C25 /* YBkeyboardMoreFunctionButton.m in Sources */,
+				D0E4D2721B5B9328007BB512 /* YBKeyboardEmojiAttachment.m in Sources */,
 				D035F3D51B411A8E00F40F62 /* MJFoundation.m in Sources */,
 				D03B03371B394FF70044496F /* YBKeyBoardInputBar.m in Sources */,
 				D071591C1B4B677B00A3D9F3 /* YBKeyboardEmojOption.m in Sources */,
